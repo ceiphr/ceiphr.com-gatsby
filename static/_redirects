@@ -3,3 +3,4 @@
 
 https://gatsby-starter-ghost.netlify.com/*      https://gatsby.ghost.org/:splat    301!
 http://gatsby-starter-ghost.netlify.com/*       https://gatsby.ghost.org/:splat    301!
+https://ceiphr.netlify.com/* https://gatsby.ceiphr.com/:splat 301!
