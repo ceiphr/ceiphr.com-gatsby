@@ -1,0 +1,61 @@
+// Carbon Ads
+
+.carbon-adds-wrapper {
+    margin-top: 2em !important;
+}
+
+#carbonads {
+    overflow: hidden;
+    width: 100%;
+    background-color: white !important;
+    font-size: 0.8em;
+    border-radius: $radius-large !important;
+    box-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
+        0 0px 0 1px rgba($scheme-invert, 0.02) !important;
+    padding: 1em;
+    transition-duration: 200ms;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+            0 0px 0 1px rgba($scheme-invert, 0.02) !important;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        display: block;
+        overflow: hidden;
+    }
+
+    .carbon-img {
+        display: block;
+
+        img {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        margin-bottom: 8px;
+        line-height: 1;
+    }
+
+    .carbon-text {
+        padding-left: 0 !important;
+        margin-top: 120px !important;
+        margin-bottom: 8px;
+        color: #637381;
+    }
+
+    .carbon-poweredby {
+        color: $link !important;
+        padding-left: 0 !important;
+        transition-duration: 200ms;
+
+        &:hover {
+            color: $dark !important;
+        }
+    }
+}

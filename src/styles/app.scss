@@ -2,6 +2,7 @@
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 
 // Import a Google Font
+
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Update Bulma's global variables
@@ -26,10 +27,12 @@ $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
     0 0px 0 1px rgba($scheme-invert, 0.02);
 
 // Update some of Bulma's component variables
+
 $input-border-color: transparent;
 $input-shadow: none;
 
 // Index Styling
+
 .post-feed {
     display: grid;
     justify-content: space-between;
@@ -58,295 +61,8 @@ $input-shadow: none;
     }
 }
 
-// Post Styling
-article {
-    .hero-body {
-        padding-left: 0;
-    }
-
-    .post-columns {
-        display: grid;
-        justify-content: space-between;
-        grid-gap: 2em;
-        grid-template-columns: 4fr;
-
-        .post-full-content {
-            grid-column: 1 / span 3;
-        }
-
-        .post-sidebar {
-            grid-column: 4 / span 1;
-        }
-
-        @media (max-width: 680px) {
-            .post-full-content {
-                grid-column: 1 / span 4;
-            }
-
-            .post-sidebar {
-                grid-column: 1 / span 4;
-            }
-        }
-
-        .post-sidebar {
-            max-width: 140px;
-            font-size: 0.8em;
-
-            a {
-                position: -webkit-sticky; /* Safari */
-                position: sticky;
-                top: 4em;
-            }
-        }
-    }
-
-    img {
-        border-radius: $radius-large;
-    }
-
-    .post-full-content {
-        ::selection {
-            text-shadow: none;
-            background: #cbeafb;
-        }
-
-        hr {
-            position: relative;
-            display: block;
-            width: 100%;
-            margin: 1.8em 0 2.4em;
-            padding: 0;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid #e3e9ed;
-        }
-
-        audio,
-        canvas,
-        iframe,
-        img,
-        svg,
-        video {
-            vertical-align: middle;
-        }
-
-        img {
-            border-radius: $radius-large;
-        }
-
-        fieldset {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        p,
-        ul,
-        ol,
-        dl,
-        blockquote {
-            margin: 0 0 1.5em 0;
-        }
-
-        ol,
-        ul {
-            padding-left: 1.3em;
-            padding-right: 1.5em;
-        }
-
-        ol ol,
-        ul ul,
-        ul ol,
-        ol ul {
-            margin: 0.5em 0 1em;
-        }
-
-        ul {
-            list-style: disc;
-        }
-
-        ol {
-            list-style: decimal;
-        }
-
-        ul,
-        ol {
-            max-width: 100%;
-        }
-
-        li {
-            margin: 0.5em 0;
-            padding-left: 0.3em;
-            line-height: 1.6em;
-        }
-
-        dt {
-            float: left;
-            margin: 0 20px 0 0;
-            width: 120px;
-            font-weight: 500;
-            text-align: right;
-        }
-
-        dd {
-            margin: 0 0 5px 0;
-            text-align: left;
-        }
-
-        blockquote {
-            margin: 0.3em 0 1.8em;
-            padding: 0 1.6em 0 1.6em;
-            border-left: #cbeafb 0.5em solid;
-        }
-
-        blockquote p {
-            margin: 0.8em 0;
-            font-size: 1.2em;
-            font-weight: 300;
-        }
-
-        blockquote small {
-            display: inline-block;
-            margin: 0.8em 0 0.8em 1.5em;
-            font-size: 0.9em;
-            opacity: 0.8;
-        }
-        /* Quotation marks */
-        blockquote small:before {
-            content: "\2014 \00A0";
-        }
-
-        blockquote cite {
-            font-weight: bold;
-        }
-        blockquote cite a {
-            font-weight: normal;
-        }
-
-        a {
-            color: #26a8ed;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 0;
-            color: var(--color-base);
-            line-height: 1.15;
-            font-weight: 700;
-            text-rendering: optimizeLegibility;
-        }
-
-        h1 {
-            margin: 0 0 0.5em 0;
-            font-size: 4rem;
-            font-weight: 700;
-        }
-        @media (max-width: 500px) {
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        h2 {
-            margin: 1.5em 0 0.5em 0;
-            font-size: 2rem;
-        }
-        @media (max-width: 500px) {
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        h3 {
-            margin: 1.5em 0 0.5em 0;
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-        @media (max-width: 500px) {
-            h3 {
-                font-size: 1.7rem;
-            }
-        }
-
-        h4 {
-            margin: 1.5em 0 0.5em 0;
-            font-size: 1.6rem;
-            font-weight: 500;
-        }
-
-        h5 {
-            margin: 1.5em 0 0.5em 0;
-            font-size: 1.4rem;
-            font-weight: 500;
-        }
-
-        h6 {
-            margin: 1.5em 0 0.5em 0;
-            font-size: 1.4rem;
-            font-weight: 500;
-        }
-    }
-}
-
-// Carbon Ads
-#carbonads {
-    display: block;
-    overflow: hidden;
-    padding: 1em;
-    max-width: 130px;
-    background: #fff;
-    text-align: center;
-    font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    line-height: 1.5;
-}
-
-#carbonads a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#carbonads a:hover {
-    color: inherit;
-}
-
-#carbonads span {
-    display: block;
-    overflow: hidden;
-}
-
-.carbon-img {
-    display: block;
-    margin: 0 auto 8px;
-    line-height: 1;
-}
-
-.carbon-text {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.carbon-poweredby {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 10px;
-    line-height: 1;
-}
+// Template Stylings
+@import "article.scss";
 
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/base/_all.sass";
@@ -354,6 +70,7 @@ article {
 @import "../../node_modules/bulma/sass/elements/container.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/elements/image.sass";
+@import "../../node_modules/bulma/sass/elements/tag.sass";
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/components/card.sass";
 @import "../../node_modules/bulma/sass/components/media.sass";

@@ -60,6 +60,7 @@
     "lodash": "4.17.15",
     "node-sass": "^4.13.0",
     "react": "16.12.0",
+    "react-carbon-ads": "^1.0.4",
     "react-dom": "16.12.0",
     "react-helmet": "5.2.1"
   }

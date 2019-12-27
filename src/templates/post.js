@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { Tags } from '@tryghost/helpers-gatsby'
 import Helmet from 'react-helmet'
 import Disqus from 'disqus-react';
+import CarbonAds from "react-carbon-ads"
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -51,10 +53,16 @@ const Post = ({ data, location }) => {
                                                 <img className="default-avatar is-rounded" src="/images/icons/avatar.svg" alt={post.primary_author.name} />
                                             }
                                         </figure>
+
                                         <div className="media-content">
                                             <div className="content">
-                                                <p>{post.primary_author.name}</p>
-                                                <p>{readingTime}</p>
+                                                <div className="is-pulled-left">
+                                                    <p>{post.primary_author.name}</p>
+                                                    <p>{readingTime}</p>
+                                                </div>
+                                                <div className="is-pulled-right">
+                                                    {post.tags && <div className="tag is-primary"> <Tags post={post} visibility="public" autolink={false} /></div>}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -68,24 +76,27 @@ const Post = ({ data, location }) => {
                         <div className="post-columns">
                             <section className="post-full-content">
                                 {/* The main post content */}
-                                <section
+                                <div
                                     className="content-body load-external-scripts"
                                     dangerouslySetInnerHTML={{ __html: post.html }}
                                 />
                             </section>
                             <section className="post-sidebar">
-                                <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
-                                    <div>
-                                        <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
-                                    </div>
-                                    <p>
-                                        This website is hosted on DigitalOcean. Use my referral link for a discount.
+                                <div className="post-sidebar-widgets">
+                                    <div className="card">
+                                        <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
+                                            <div>
+                                                <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
+                                            </div>
+                                            <p>
+                                                This website is hosted on DigitalOcean. Use my referral link for a discount.
                                     </p>
-                                </a>
-                                <script async type="text/javascript"
-                                    src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
-                                    id="_carbonads_js">
-                                </script>
+                                        </a>
+                                    </div>
+                                    <CarbonAds
+                                        carbonUrl="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
+                                    />
+                                </div>
                             </section>
                         </div>
                     </article>
