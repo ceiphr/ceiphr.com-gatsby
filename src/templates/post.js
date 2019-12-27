@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Tags } from '@tryghost/helpers-gatsby'
+import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import Helmet from 'react-helmet'
 import Disqus from 'disqus-react';
-import CarbonAds from "react-carbon-ads"
 
+import { CarbonAds } from '../components/common'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 
 /**
 * Single post view (/:slug)
@@ -36,6 +36,7 @@ const Post = ({ data, location }) => {
             />
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
+                {/* <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script> */}
             </Helmet>
             <Layout>
                 <div className="container">
@@ -90,12 +91,10 @@ const Post = ({ data, location }) => {
                                             </div>
                                             <p>
                                                 This website is hosted on DigitalOcean. Use my referral link for a discount.
-                                    </p>
+                                            </p>
                                         </a>
                                     </div>
-                                    <CarbonAds
-                                        carbonUrl="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
-                                    />
+                                    <CarbonAds placement="ceiphrcom"/>
                                 </div>
                             </section>
                         </div>
