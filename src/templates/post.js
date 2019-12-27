@@ -36,7 +36,6 @@ const Post = ({ data, location }) => {
             />
             <Helmet>
                 <style type="text/css">{`${post.codeinjection_styles}`}</style>
-                {/* <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script> */}
             </Helmet>
             <Layout>
                 <div className="container">

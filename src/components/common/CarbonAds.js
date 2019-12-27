@@ -5,11 +5,13 @@ class CarbonAds extends Component {
         const { placement } = this.props
 
         return (
-            <script
-                async
-                type='text/javascript'
-                src={`//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=${this.props.placement}`}
-                id='_carbonads_js' />
+            <div className="carbon-ads-wrapper">
+                <script
+                    async
+                    type='text/javascript'
+                    src={`//cdn.carbonads.com/carbon.js?zoneid=1696&serve=CVYD42T&placement=${this.props.placement}`}
+                    id='_carbonads_js' />
+            </div>
         );
     }
 }
