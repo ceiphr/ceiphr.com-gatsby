@@ -41,7 +41,7 @@ class DefaultLayout extends React.Component {
                 </Helmet>
 
                 <div className="viewport">
-                    <div className="viewport-top section">
+                    <div className="viewport-top">
                         {/* The main header section on top of the screen */}
                         <nav className="navbar is-fixed-top">
                             <div className="container">
