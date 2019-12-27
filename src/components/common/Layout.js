@@ -71,7 +71,7 @@ class DefaultLayout extends React.Component {
                         {/* The footer at the very bottom of the screen */}
                         <footer className="footer">
                             <div className="container">
-                                <div className="has-text-left">
+                                <div className="has-text-centered">
                                     <p>2016 &mdash; 2019 Ari Birnbaum ({site.title}). This website's source code is licensed under MIT.</p>
                                 </div>
                             </div>

@@ -1,27 +1,31 @@
 @charset "utf-8";
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
 
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-
-// Set your brand colors
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Update Bulma's global variables
-$family-sans-serif: 'Nunito', sans-serif;
-$grey-dark: $brown;
-$grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
+
+$primary: $turquoise;
+$link: $blue;
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$dark: $grey-darker;
+$text: $grey-dark;
+
+$family-sans-serif: "Nunito", sans-serif;
+$body-background-color: $white-ter;
+
+$radius-large: 8px;
+
 $widescreen-enabled: false;
 $fullhd-enabled: false;
+$card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
+    0 0px 0 1px rgba($scheme-invert, 0.02);
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
-$control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
@@ -29,8 +33,14 @@ $input-shadow: none;
 .post-feed {
     display: grid;
     justify-content: space-between;
-    grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+@media (max-width: 980px) {
+    .post-feed {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 680px) {
@@ -39,21 +49,42 @@ $input-shadow: none;
     }
 }
 
-.post-card-image {
-    margin: 0 0 10px 0;
-    width: auto;
-    height: 256px;
-    background: no-repeat center center;
-    background-size: cover;
+.card {
+    border-radius: $radius-large;
+    transition-duration: 200ms;
+
+    .post-card-image {
+        border-top-left-radius: $radius-large;
+        border-top-right-radius: $radius-large;
+        margin: 0 0 10px 0;
+        width: auto;
+        height: 200px;
+        background: no-repeat center center;
+        background-size: cover;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+            0 0px 0 1px rgba($scheme-invert, 0.02);
+    }
+}
+
+// Post Styling
+.header-image figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
 }
 
 // Import only what you need from Bulma
-@import '../../node_modules/bulma/sass/utilities/_all.sass';
-@import '../../node_modules/bulma/sass/base/_all.sass';
-@import '../../node_modules/bulma/sass/elements/button.sass';
-@import '../../node_modules/bulma/sass/elements/container.sass';
-@import '../../node_modules/bulma/sass/elements/title.sass';
-@import '../../node_modules/bulma/sass/components/navbar.sass';
-@import '../../node_modules/bulma/sass/components/card.sass';
-@import '../../node_modules/bulma/sass/layout/hero.sass';
-@import '../../node_modules/bulma/sass/layout/section.sass';
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/elements/title.sass";
+@import "../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../node_modules/bulma/sass/components/card.sass";
+@import "../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../node_modules/bulma/sass/layout/section.sass";

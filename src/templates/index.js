@@ -19,6 +19,15 @@ const Index = ({ data, location, pageContext }) => {
     return (
         <>
             <MetaData location={location} />
+            <section className="hero is-info is-large">
+                <div className="hero-body">
+                    <div className="container">
+                        <h1 className="title">
+                            Large title
+                        </h1>
+                    </div>
+                </div>
+            </section>
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
