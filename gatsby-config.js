@@ -34,6 +34,7 @@ module.exports = {
         siteUrl: config.siteUrl,
     },
     plugins: [
+        `gatsby-plugin-sass`,
         /**
          *  Content Plugins
          */

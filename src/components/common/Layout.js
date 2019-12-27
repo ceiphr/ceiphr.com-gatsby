@@ -8,7 +8,7 @@ import { Navigation } from '.'
 import config from '../../utils/siteConfig'
 
 // Styles
-import '../../styles/app.css'
+import '../../styles/app.scss'
 
 /**
 * Main layout component
@@ -18,83 +18,70 @@ import '../../styles/app.css'
 * styles, and meta data for each page.
 *
 */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
-    const site = data.allGhostSettings.edges[0].node
-    const twitterUrl = site.twitter ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}` : null
-    const facebookUrl = site.facebook ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}` : null
+class DefaultLayout extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { navVisibility: true };
+    }
 
-    return (
-        <>
-            <Helmet>
-                <html lang={site.lang} />
-                <style type="text/css">{`${site.codeinjection_styles}`}</style>
-                <body className={bodyClass} />
-            </Helmet>
+    ToggleNav = () => {
+        this.setState({ navVisibility: !this.state.navVisibility })
+    }
 
-            <div className="viewport">
+    render() {
+        const { data, children, bodyClass, isHome } = this.props;
+        const site = data.allGhostSettings.edges[0].node;
 
-                <div className="viewport-top">
-                    {/* The main header section on top of the screen */}
-                    <header className="site-head" style={{ ...site.cover_image && { backgroundImage: `url(${site.cover_image})` } }}>
-                        <div className="container">
-                            <div className="site-mast">
-                                <div className="site-mast-left">
-                                    <Link to="/">
-                                        {site.logo ?
-                                            <img className="site-logo" src={site.logo} alt={site.title} />
-                                            : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
-                                        }
-                                    </Link>
+        return (
+            <>
+                <Helmet>
+                    <html lang={site.lang} />
+                    <style type="text/css">{`${site.codeinjection_styles}`}</style>
+                    <body className={bodyClass} />
+                </Helmet>
+
+                <div className="viewport">
+                    <div className="viewport-top section">
+                        {/* The main header section on top of the screen */}
+                        <nav className="navbar is-fixed-top">
+                            <div className="container">
+                                <div className="navbar-brand">
+                                    <a className="navbar-item" href="https://bulma.io">
+                                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+                                    </a>
+                                    <div className="navbar-burger burger" onClick={this.ToggleNav}>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
                                 </div>
-                                <div className="site-mast-right">
-                                    { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.facebook && <a href={ facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                    <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${config.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
+                                <div className={this.state.navVisibility ? "navbar-menu" : "navbar-menu is-active"}>
+                                    <div className="navbar-end">
+                                        <Navigation data={site.navigation} navClass="navbar-item" />
+                                    </div>
                                 </div>
                             </div>
-                            { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.description}</p>
-                                </div> :
-                                null}
-                            <nav className="site-nav">
-                                <div className="site-nav-left">
-                                    {/* The navigation items as setup in Ghost */}
-                                    <Navigation data={site.navigation} navClass="site-nav-item" />
-                                </div>
-                                <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
-                                </div>
-                            </nav>
-                        </div>
-                    </header>
-
-                    <main className="site-main">
+                        </nav>
+                    </div>
+                    <main className="site-main section">
                         {/* All the main content gets inserted here, index.js, post.js */}
                         {children}
                     </main>
-
+                    <div className="viewport-bottom section">
+                        {/* The footer at the very bottom of the screen */}
+                        <footer className="footer">
+                            <div className="container">
+                                <div className="has-text-left">
+                                    <p>2016 &mdash; 2019 Ari Birnbaum ({site.title}). This website's source code is licensed under MIT.</p>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
                 </div>
 
-                <div className="viewport-bottom">
-                    {/* The footer at the very bottom of the screen */}
-                    <footer className="site-foot">
-                        <div className="site-foot-nav container">
-                            <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
-                            </div>
-                            <div className="site-foot-nav-right">
-                                <Navigation data={site.navigation} navClass="site-foot-nav-item" />
-                            </div>
-                        </div>
-                    </footer>
-
-                </div>
-            </div>
-
-        </>
-    )
+            </>
+        )
+    }
 }
 
 DefaultLayout.propTypes = {
