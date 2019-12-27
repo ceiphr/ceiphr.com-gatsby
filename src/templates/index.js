@@ -19,7 +19,7 @@ const Index = ({ data, location, pageContext }) => {
     return (
         <>
             <MetaData location={location} />
-            <section className="hero is-info is-large">
+            <section className="hero is-info is-medium section">
                 <div className="hero-body">
                     <div className="container">
                         <h1 className="title">

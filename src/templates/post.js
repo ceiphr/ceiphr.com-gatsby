@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+import Disqus from 'disqus-react';
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -13,9 +14,16 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 * This file renders a single post and loads all the content.
 *
 */
+
 const Post = ({ data, location }) => {
     const post = data.ghostPost
     const readingTime = readingTimeHelper(post)
+    const disqusShortname = 'ceiphr';
+    const disqusConfig = {
+        url: post.url,
+        identifier: post.slug,
+        title: post.title,
+    };
 
     return (
         <>
@@ -57,16 +65,31 @@ const Post = ({ data, location }) => {
                             <figure className="post-feature-image">
                                 <img src={post.feature_image} alt={post.title} />
                             </figure> : null}
-                        <section className="post-full-content">
-                            {/* The main post content */}
-                            <section
-                                className="content-body load-external-scripts"
-                                dangerouslySetInnerHTML={{ __html: post.html }}
-                            />
-                        </section>
+                        <div className="post-columns">
+                            <section className="post-full-content">
+                                {/* The main post content */}
+                                <section
+                                    className="content-body load-external-scripts"
+                                    dangerouslySetInnerHTML={{ __html: post.html }}
+                                />
+                            </section>
+                            <section className="post-sidebar">
+                                <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
+                                    <div>
+                                        <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
+                                    </div>
+                                    <p>
+                                        This website is hosted on DigitalOcean. Use my referral link for a discount.
+                                    </p>
+                                </a>
+                                <script async type="text/javascript"
+                                    src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom"
+                                    id="_carbonads_js">
+                                </script>
+                            </section>
+                        </div>
                     </article>
-                    <div id="commento"></div>
-                    <script src="https://cdn.commento.io/js/commento.js"></script>
+                    <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
                 </div>
             </Layout>
         </>
