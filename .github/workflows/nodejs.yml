@@ -19,7 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: gatsby build
       run: |
-        yarn
+        yarn install
         gatsby build
       env:
         CI: true
