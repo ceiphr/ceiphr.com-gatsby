@@ -1,27 +1,26 @@
-# Gatsby Starter Ghost
+# Ceiphr.com Gatsby
 
-A starter template to build lightning fast websites with [Ghost](https://ghost.org) & [Gatsby](https://gatsbyjs.org)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1cbc5535-77bf-4896-b288-221005a33821/deploy-status)](https://app.netlify.com/sites/ceiphr/deploys)
 
-**Demo:** https://gatsby.ghost.org
+A rewrite of [www.ceiphr.com](https://www.ceiphr.com/) using reactjs, gatsby, and bulma. Hosted on Netlify.
+
+<!-- &nbsp;
+
+![gatsby-starter-ghost](https://user-images.githubusercontent.com/120485/50913567-8ab8e380-142c-11e9-9e78-de02ded12fc6.jpg) -->
 
 &nbsp;
 
-![gatsby-starter-ghost](https://user-images.githubusercontent.com/120485/50913567-8ab8e380-142c-11e9-9e78-de02ded12fc6.jpg)
-
-&nbsp;
-
-
-# Installing
+## Installing
 
 ```bash
 # With Gatsby CLI
-gatsby new gatsby-starter-ghost https://github.com/TryGhost/gatsby-starter-ghost.git
+gatsby new ceiphr.com-gatsby https://github.com/ceiphr/ceiphr.com-gatsby.git
 ```
 
 ```bash
 # From Source
-git clone https://github.com/TryGhost/gatsby-starter-ghost.git
-cd gatsby-starter-ghost
+git clone https://github.com/ceiphr/ceiphr.com-gatsby.git
+cd ceiphr.com-gatsby
 ```
 
 Then install dependencies
@@ -32,64 +31,46 @@ yarn
 
 &nbsp;
 
-# Running
+## Running
 
-Start the development server. You now have a Gatsby site pulling content from headless Ghost.
+Start the development server. You now have a Gatsby site pulling content from https://ghost.ceiphr.io.
 
 ```bash
 gatsby develop
 ```
 
-By default, the starter will populate content from a default Ghost install located at https://gatsby.ghost.io.
+To change Ghost sources, change the `apiUrl` and `contentApiKey` in `.ghost.json` to target your server:
 
-To use your own install, you will need to edit the `.ghost.json` config file with your credentials. Change the `apiUrl` value to the URL of your Ghost site. For Ghost(Pro) customers, this is the Ghost URL ending in `.ghost.io`, and for people using the self-hosted version of Ghost, it's the same URL used to access your site.
+### Ghost >=2.10.0 <3.0.0
 
-Next, update the `contentApiKey` value to a key associated with the Ghost site. A key can be provided by creating an integration within Ghost Admin. Navigate to Integrations and click "Add new integration". Name the integration appropriately and click create.
-
-To use this starter without issues, your Ghost installation needs to be at least on version `2.10.0`.
-
-The default Ghost version that is used for this starter is `3.x`. If your Ghost installation is on a lower version, you will need to pass in a `version` property in your `.ghost.json` settings:
-
-**Ghost >=2.10.0 <3.0.0**
 ```json
 {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0",
-    "version": "v2"
-}
-```
-
-**Ghost <=3.0.0**
-```json
-{
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+  "development": {
+    "apiUrl": "https://ghost.ceiphr.io",
+    "contentApiKey": "d1210c1b85ba7b255530751d99"
+  },
+  "production": {
+    "apiUrl": "https://ghost.ceiphr.io",
+    "contentApiKey": "d1210c1b85ba7b255530751d99"
+  }
 }
 ```
 
 &nbsp;
 
-# Deploying with Netlify
+## Deploying with Netlify
 
 The starter contains three config files specifically for deploying with Netlify. A `netlify.toml` file for build settings, a `/static/_headers` file with default security headers set for all routes, and `/static/_redirects` to set Netlify custom domain redirects.
 
 To deploy to your Netlify account, hit the button below.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/TryGhost/gatsby-starter-ghost)
-
-Content API Keys are generally not considered to be sensitive information, they exist so that they can be changed in the event of abuse; so most people commit it directly to their `.ghost.json` config file. If you prefer to keep this information out of your repository you can remove this config and set [Netlify ENV variables](https://www.netlify.com/docs/continuous-deployment/#build-environment-variables) for production builds instead.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ceiphr/ceiphr.com-gatsby.git)
 
 Once deployed, you can set up a [Ghost + Netlify Integration](https://docs.ghost.org/integrations/netlify/) to use deploy hooks from Ghost to trigger Netlify rebuilds. That way, any time data changes in Ghost, your site will rebuild on Netlify.
 
 &nbsp;
 
-# Optimising
-
-You can disable the default Ghost Handlebars Theme front-end by enabling the `Make this site private` flag within your Ghost settings. This enables password protection in front of the Ghost install and sets `<meta name="robots" content="noindex" />` so your Gatsby front-end becomes the source of truth for SEO.
-
-&nbsp;
-
-# Extra options
+## Extra options
 
 ```bash
 # Run a production build, locally
@@ -103,6 +84,11 @@ Gatsby `develop` uses the `development` config in `.ghost.json` - while Gatsby `
 
 &nbsp;
 
-# Copyright & License
+## Credit
 
-Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).
+This repository was originally based off of the Ghost Foundation's [gatsby-starter-ghost](https://github.com/TryGhost/gatsby-starter-ghost) starter
+template project which is licensed under the [MIT license](https://github.com/TryGhost/gatsby-starter-ghost/blob/master/LICENSE).
+
+## Copyright & License
+
+Copyright (c) 2016-2019 Ari Birnbaum (Ceiphr) - Released under the [GNU GENERAL PUBLIC LICENSE](LICENSE).

@@ -93,7 +93,7 @@ const Post = ({ data, location }) => {
                                             </p>
                                         </a>
                                     </div>
-                                    <CarbonAds placement="ceiphrcom"/>
+                                    <CarbonAds placement="ceiphrcom" />
                                 </div>
                             </section>
                         </div>
