@@ -58,18 +58,6 @@ To change Ghost sources, change the `apiUrl` and `contentApiKey` in `.ghost.json
 
 &nbsp;
 
-## Deploying with Netlify
-
-The starter contains three config files specifically for deploying with Netlify. A `netlify.toml` file for build settings, a `/static/_headers` file with default security headers set for all routes, and `/static/_redirects` to set Netlify custom domain redirects.
-
-To deploy to your Netlify account, hit the button below.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ceiphr/ceiphr.com-gatsby.git)
-
-Once deployed, you can set up a [Ghost + Netlify Integration](https://docs.ghost.org/integrations/netlify/) to use deploy hooks from Ghost to trigger Netlify rebuilds. That way, any time data changes in Ghost, your site will rebuild on Netlify.
-
-&nbsp;
-
 ## Extra options
 
 ```bash
@@ -88,6 +76,8 @@ Gatsby `develop` uses the `development` config in `.ghost.json` - while Gatsby `
 
 This repository was originally based off of the Ghost Foundation's [gatsby-starter-ghost](https://github.com/TryGhost/gatsby-starter-ghost) starter
 template project which is licensed under the [MIT license](https://github.com/TryGhost/gatsby-starter-ghost/blob/master/LICENSE).
+
+&nbsp;
 
 ## Copyright & License
 
