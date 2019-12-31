@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { Tags } from '@tryghost/helpers-gatsby'
-import { readingTime as readingTimeHelper } from '@tryghost/helpers'
-import Helmet from 'react-helmet'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import { Tags } from '@tryghost/helpers-gatsby';
+import { readingTime as readingTimeHelper } from '@tryghost/helpers';
+import Helmet from 'react-helmet';
 import Disqus from 'disqus-react';
 import Prism from 'prismjs'
 
-import { Layout } from '../components/common'
+import { Layout, PostCard } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -28,8 +28,9 @@ class Post extends React.Component {
 
     render() {
         const { data, location } = this.props;
-        const post = data.ghostPost
-        const readingTime = readingTimeHelper(post)
+        const post = data.ghostPost;
+        const nextPost = data.allGhostPost.edges;
+        const readingTime = readingTimeHelper(post);
         const disqusShortname = 'ceiphr';
         const disqusConfig = {
             url: post.url,
@@ -116,6 +117,11 @@ class Post extends React.Component {
                                 </section>
                             </div>
                         </article>
+                        <div className="post-recommendations">
+                            {nextPost.map(({ node }) => (
+                                <PostCard key={node.id} post={node} />
+                            ))}
+                        </div>
                         <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
                     </div>
                 </Layout>
@@ -140,8 +146,19 @@ export default Post
 
 export const postQuery = graphql`
     query($slug: String!) {
-                    ghostPost(slug: {eq: $slug }) {
-                    ...GhostPostFields
-                }
-                }
-            `
+        ghostPost(slug: {eq: $slug }) {
+          ...GhostPostFields
+        },
+        allGhostPost(
+            sort: { order: DESC, fields: [published_at] },
+            limit: 2,
+            filter: {slug: {ne: $slug}}
+        ) {
+          edges {
+            node {
+              ...GhostPostFields
+            }
+          }
+        }
+    }
+`

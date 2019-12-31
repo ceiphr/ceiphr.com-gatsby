@@ -1,9 +1,6 @@
 @charset "utf-8";
+@import '../../node_modules/@ibm/plex/scss/ibm-plex.scss';
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
-
-// Import a Google Font
-
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Update Bulma's global variables
 
@@ -16,7 +13,7 @@ $danger: $red;
 $dark: $grey-darker;
 $text: $grey-dark;
 
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 $body-background-color: $white-ter;
 
 $radius-large: 8px;
@@ -39,6 +36,10 @@ $input-shadow: none;
         content: " \00b7 ";
     }
     a:last-child:after { content: none; }
+}
+
+.hero-body {
+    padding-left: 0px !important;
 }
 
 .post-feed {

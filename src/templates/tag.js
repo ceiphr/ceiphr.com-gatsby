@@ -24,10 +24,16 @@ const Tag = ({ data, location, pageContext }) => {
             />
             <Layout>
                 <div className="container">
-                    <header className="tag-header">
-                        <h1>{tag.name}</h1>
-                        {tag.description ? <p>{tag.description}</p> : null }
-                    </header>
+                    <section className="hero">
+                        <div className="hero-body">
+                            <h1 className="title">
+                                {tag.name}
+                            </h1>
+                            <h2 class="subtitle">
+                                {tag.description ? <p>{tag.description}</p> : null}
+                            </h2>
+                        </div>
+                    </section>
                     <section className="post-feed">
                         {posts.map(({ node }) => (
                             // The tag below includes the markup for each post - components/common/PostCard.js
@@ -59,19 +65,19 @@ export default Tag
 
 export const pageQuery = graphql`
     query GhostTagQuery($slug: String!, $limit: Int!, $skip: Int!) {
-        ghostTag(slug: { eq: $slug }) {
-            ...GhostTagFields
-        }
-        allGhostPost(
-            sort: { order: DESC, fields: [published_at] },
+                ghostTag(slug: {eq: $slug }) {
+                ...GhostTagFields
+            }
+            allGhostPost(
+            sort: {order: DESC, fields: [published_at] },
             filter: {tags: {elemMatch: {slug: {eq: $slug}}}},
             limit: $limit,
             skip: $skip
         ) {
-            edges {
+                edges {
                 node {
                 ...GhostPostFields
-                }
+            }
             }
         }
     }

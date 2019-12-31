@@ -37,6 +37,7 @@
     "eslint-plugin-react": "7.16.0"
   },
   "dependencies": {
+    "@ibm/plex": "^4.0.2",
     "@tryghost/helpers": "1.1.19",
     "@tryghost/helpers-gatsby": "1.0.22",
     "bulma": "^0.8.0",

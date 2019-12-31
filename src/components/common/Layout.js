@@ -79,7 +79,7 @@ class DefaultLayout extends React.Component {
                                         <a target="_blank" href="https://www.instagram.com/ceiphr/">Instagram</a>
                                         <a target="_blank" href="https://twitter.com/ceiphr/">Twitter</a>
                                     </p>
-                                    <p>2016 &mdash; 2019 Ari Birnbaum ({site.title}). This website's source code is licensed under MIT.</p>
+                                    <p>2016 &mdash; 2019 Ari Birnbaum ({site.title}). This website's source code is licensed under <a href="https://github.com/ceiphr/ceiphr.com-gatsby/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
                                 </div>
                             </div>
                         </footer>

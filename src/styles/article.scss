@@ -6,6 +6,20 @@
     color: $white;
 }
 
+.post-recommendations {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 1.5em;
+    margin-bottom: 1.5em;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 680px) {
+    .post-recommendations {
+        grid-template-columns: 1fr;
+    }
+}
+
 // Post Styling
 article {
     .hero-body {
