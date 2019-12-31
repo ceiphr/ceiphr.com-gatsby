@@ -6,7 +6,6 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import Helmet from 'react-helmet'
 import Disqus from 'disqus-react';
 
-import { CarbonAds } from '../components/common'
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
