@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
+
 import { Tags } from '@tryghost/helpers-gatsby';
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
-import Helmet from 'react-helmet';
+
 import Disqus from 'disqus-react';
 import Prism from 'prismjs'
 

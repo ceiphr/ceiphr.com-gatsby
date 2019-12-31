@@ -10,8 +10,9 @@
  *
  */
 require("prismjs/themes/prism-tomorrow.css");
-require("prismjs/plugins/line-numbers/prism-line-numbers.css");
 require("prismjs/plugins/command-line/prism-command-line.css");
+require("typeface-roboto");
+require('typeface-roboto-mono');
 
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.load-external-scripts script');

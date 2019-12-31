@@ -37,7 +37,6 @@
     "eslint-plugin-react": "7.16.0"
   },
   "dependencies": {
-    "@ibm/plex": "^4.0.2",
     "@tryghost/helpers": "1.1.19",
     "@tryghost/helpers-gatsby": "1.0.22",
     "bulma": "^0.8.0",
@@ -63,6 +62,8 @@
     "prismjs": "^1.17.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-helmet": "5.2.1"
+    "react-helmet": "5.2.1",
+    "typeface-roboto": "^0.0.75",
+    "typeface-roboto-mono": "^0.0.75"
   }
 }

@@ -1,5 +1,4 @@
 @import "article-contents.scss";
-@import "syntax-themes.css";
 @import "carbonads.scss";
 
 .tag a {
@@ -22,6 +21,15 @@
 
 // Post Styling
 article {
+    pre {
+        background: $dark !important;
+        border-radius: $radius-large !important;
+        border-width: 0 !important;
+        code {
+            font-family: "Roboto Mono", monospace !important;
+        }
+    }
+
     .hero-body {
         padding-left: 0;
         padding-right: 0;

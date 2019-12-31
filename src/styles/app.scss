@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import '../../node_modules/@ibm/plex/scss/ibm-plex.scss';
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 
 // Update Bulma's global variables
@@ -13,7 +12,8 @@ $danger: $red;
 $dark: $grey-darker;
 $text: $grey-dark;
 
-$family-sans-serif: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+$family-sans-serif: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$family-code: 'Roboto Mono', monospace;
 $body-background-color: $white-ter;
 
 $radius-large: 8px;
