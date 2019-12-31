@@ -26,6 +26,9 @@ const Post = ({ data, location }) => {
         identifier: post.slug,
         title: post.title,
     };
+    const createCarbonTag = () => ({
+        __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CVAIKKQM&placement=ceiphrcom" id="_carbonads_js"></script>'
+    });
 
     return (
         <>
@@ -93,7 +96,10 @@ const Post = ({ data, location }) => {
                                             </p>
                                         </a>
                                     </div>
-                                    <CarbonAds placement="ceiphrcom" />
+                                    <div
+                                        className="card"
+                                        dangerouslySetInnerHTML={createCarbonTag()}
+                                    />
                                 </div>
                             </section>
                         </div>
