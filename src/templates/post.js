@@ -5,6 +5,7 @@ import { Tags } from '@tryghost/helpers-gatsby'
 import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import Helmet from 'react-helmet'
 import Disqus from 'disqus-react';
+import Prism from 'prismjs'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -16,97 +17,111 @@ import { MetaData } from '../components/common/meta'
 *
 */
 
-const Post = ({ data, location }) => {
-    const post = data.ghostPost
-    const readingTime = readingTimeHelper(post)
-    const disqusShortname = 'ceiphr';
-    const disqusConfig = {
-        url: post.url,
-        identifier: post.slug,
-        title: post.title,
-    };
-    const createCarbonTag = () => ({
-        __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script>'
-    });
+class Post extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    return (
-        <>
-            <MetaData
-                data={data}
-                location={location}
-                type="article"
-            />
-            <Helmet>
-                <style type="text/css">{`${post.codeinjection_styles}`}</style>
-            </Helmet>
-            <Layout>
-                <div className="container">
-                    <article className="content">
-                        <section className="hero">
-                            <div className="hero-body">
-                                <div className="container">
-                                    <h1 className="title">
-                                        {post.title}
-                                    </h1>
-                                    <div className="media">
-                                        <figure className="media-left image is-48x48">
-                                            {post.primary_author.profile_image ?
-                                                <img className="author-profile-image is-rounded" src={post.primary_author.profile_image} alt={post.primary_author.name} /> :
-                                                <img className="default-avatar is-rounded" src="/images/icons/avatar.svg" alt={post.primary_author.name} />
-                                            }
-                                        </figure>
+    componentDidMount() {
+        Prism.highlightAll()
+    }
 
-                                        <div className="media-content">
-                                            <div className="content">
-                                                <div className="is-pulled-left">
-                                                    <p>{post.primary_author.name}</p>
-                                                    <p>{readingTime}</p>
-                                                </div>
-                                                <div className="is-pulled-right">
-                                                    {post.tags && <div className="tag is-primary"> <Tags post={post} visibility="public" autolink={false} /></div>}
+    render() {
+        const { data, location } = this.props;
+        const post = data.ghostPost
+        const readingTime = readingTimeHelper(post)
+        const disqusShortname = 'ceiphr';
+        const disqusConfig = {
+            url: post.url,
+            identifier: post.slug,
+            title: post.title,
+        };
+
+        // Implements Carbon Ads. Thanks @stevenmirabito (https://github.com/stevenmirabito) for helping me with this.
+        const createCarbonTag = () => ({
+            __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script>'
+        });
+
+        return (
+            <>
+                <MetaData
+                    data={data}
+                    location={location}
+                    type="article"
+                />
+                <Helmet>
+                    <style type="text/css">{`${post.codeinjection_styles}`}</style>
+                </Helmet>
+                <Layout>
+                    <div className="container">
+                        <article className="content">
+                            <section className="hero">
+                                <div className="hero-body">
+                                    <div className="container">
+                                        <h1 className="title">
+                                            {post.title}
+                                        </h1>
+                                        <div className="media">
+                                            <figure className="media-left image is-48x48">
+                                                {post.primary_author.profile_image ?
+                                                    <img className="author-profile-image is-rounded" src={post.primary_author.profile_image} alt={post.primary_author.name} /> :
+                                                    <img className="default-avatar is-rounded" src="/images/icons/avatar.svg" alt={post.primary_author.name} />
+                                                }
+                                            </figure>
+
+                                            <div className="media-content">
+                                                <div className="content">
+                                                    <div className="is-pulled-left">
+                                                        <p>{post.primary_author.name}</p>
+                                                        <a href={"mailto: contact@ceiphr.com"}>contact@ceiphr.com</a>
+                                                    </div>
+                                                    <div className="is-pulled-right">
+                                                        <p className="has-text-right">{readingTime}</p>
+                                                        {post.tags && <div className="tag is-primary"> <Tags post={post} visibility="public" autolink={true} /></div>}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        {post.feature_image ?
-                            <figure className="post-feature-image">
-                                <img src={post.feature_image} alt={post.title} />
-                            </figure> : null}
-                        <div className="post-columns">
-                            <section className="post-full-content">
-                                {/* The main post content */}
-                                <div
-                                    className="content-body load-external-scripts"
-                                    dangerouslySetInnerHTML={{ __html: post.html }}
-                                />
                             </section>
-                            <section className="post-sidebar">
-                                <div className="post-sidebar-widgets">
-                                    <div className="card">
-                                        <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
-                                            <div>
-                                                <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
-                                            </div>
-                                            <p>
-                                                This website is hosted on DigitalOcean. Use my referral link for a discount.
-                                            </p>
-                                        </a>
-                                    </div>
+                            {post.feature_image ?
+                                <figure className="post-feature-image">
+                                    <img src={post.feature_image} alt={post.title} />
+                                </figure> : null}
+                            <div className="post-columns">
+                                <section className="post-full-content">
+                                    {/* The main post content */}
                                     <div
-                                        dangerouslySetInnerHTML={createCarbonTag()}
+                                        className="content-body load-external-scripts"
+                                        dangerouslySetInnerHTML={{ __html: post.html }}
                                     />
-                                </div>
-                            </section>
-                        </div>
-                    </article>
-                    <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-                </div>
-            </Layout>
-        </>
-    )
+                                </section>
+                                <section className="post-sidebar">
+                                    <div className="post-sidebar-widgets">
+                                        <div className="card">
+                                            <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
+                                                <div>
+                                                    <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
+                                                </div>
+                                                <p>
+                                                    This website is hosted on DigitalOcean. Use my referral link for a discount.
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div
+                                            dangerouslySetInnerHTML={createCarbonTag()}
+                                        />
+                                    </div>
+                                </section>
+                            </div>
+                        </article>
+                        <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+                    </div>
+                </Layout>
+            </>
+        )
+    }
 }
 
 Post.propTypes = {

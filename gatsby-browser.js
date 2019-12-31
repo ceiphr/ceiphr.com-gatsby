@@ -9,6 +9,10 @@
  * via ids/classnames etc.
  *
  */
+require("prismjs/themes/prism-tomorrow.css");
+require("prismjs/plugins/line-numbers/prism-line-numbers.css");
+require("prismjs/plugins/command-line/prism-command-line.css");
+
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll('.load-external-scripts script');
 

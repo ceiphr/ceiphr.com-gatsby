@@ -33,6 +33,14 @@ $input-shadow: none;
 
 // Index Styling
 
+.footer-links {
+    a:after { 
+        color: $black;
+        content: " \00b7 ";
+    }
+    a:last-child:after { content: none; }
+}
+
 .post-feed {
     display: grid;
     justify-content: space-between;

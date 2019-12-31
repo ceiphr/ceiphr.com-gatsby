@@ -1,4 +1,6 @@
 .post-full-content {
+    overflow: hidden;
+
     ::selection {
         text-shadow: none;
         background: #cbeafb;

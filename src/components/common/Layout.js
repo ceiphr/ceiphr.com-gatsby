@@ -72,6 +72,13 @@ class DefaultLayout extends React.Component {
                         <footer className="footer">
                             <div className="container">
                                 <div className="has-text-centered">
+                                    <p className="footer-links">
+                                        <a target="_blank" href="https://github.com/ceiphr">GitHub</a>
+                                        <a target="_blank" href="https://dribbble.com/ceiphr">Dribbble</a>
+                                        <a target="_blank" href="https://www.linkedin.com/in/ceiphr/">LinkedIn</a>
+                                        <a target="_blank" href="https://www.instagram.com/ceiphr/">Instagram</a>
+                                        <a target="_blank" href="https://twitter.com/ceiphr/">Twitter</a>
+                                    </p>
                                     <p>2016 &mdash; 2019 Ari Birnbaum ({site.title}). This website's source code is licensed under MIT.</p>
                                 </div>
                             </div>
