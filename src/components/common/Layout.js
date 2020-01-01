@@ -29,18 +29,6 @@ class DefaultLayout extends React.Component {
         this.setState({ navVisibility: !this.state.navVisibility })
     }
 
-    componentDidMount() {
-        window.onscroll = () => {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.getElementById("navbar").style.padding = "30px 10px";
-                document.getElementById("logo").style.fontSize = "25px";
-            } else {
-                document.getElementById("navbar").style.padding = "80px 10px";
-                document.getElementById("logo").style.fontSize = "35px";
-            }
-        }
-    }
-
     render() {
         const { data, children, bodyClass, isHome } = this.props;
         const site = data.allGhostSettings.edges[0].node;
@@ -56,7 +44,7 @@ class DefaultLayout extends React.Component {
                 <div className="viewport">
                     <div className="viewport-top">
                         {/* The main header section on top of the screen */}
-                        <nav className="navbar is-fixed-top">
+                        <nav id="navbar" className="navbar is-fixed-top">
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="/">

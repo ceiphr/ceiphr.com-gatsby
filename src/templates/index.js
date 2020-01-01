@@ -18,6 +18,7 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Index = ({ data, location, pageContext }) => {
+    const posts = data.allGhostPost.edges;
 
     return (
         <>

@@ -3,6 +3,7 @@
 
 // Update Bulma's global variables
 
+$black: #000000;
 // $primary: #0051ba;
 // $link: #083d77;
 // $dark: #000000;
@@ -78,7 +79,6 @@ code {
 
 .hero-homepage {
     background-image: url("../../static/images/background.svg");
-    background-attachment: fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -101,7 +101,7 @@ code {
 }
 
 .navbar {
-    background-color: rgba($color: $black, $alpha: 0.9) !important;
+    background-color: rgba($color: #000000, $alpha: 0.9) !important;
     height: 64px;
 
     .navbar-item:hover {
