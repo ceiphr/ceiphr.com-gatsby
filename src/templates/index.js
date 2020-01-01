@@ -1,6 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+// import Lottie from 'react-lottie';
+
+import banner from '../../static/images/logo.svg'
+// import * as glyphAnimation from '../../static/glyph.json'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -14,19 +18,23 @@ import { MetaData } from '../components/common/meta'
 *
 */
 const Index = ({ data, location, pageContext }) => {
-    const posts = data.allGhostPost.edges
 
     return (
         <>
             <MetaData location={location} />
-            <section className="hero is-black is-medium section">
+            <section className="hero hero-homepage is-medium section">
                 <div className="hero-body">
                     <div className="container">
-                        <h1 className="title">
-                            Large title
-                        </h1>
+                        <div className="hero-banner">
+                            <img src={banner} alt="Ceiphr" />
+                        </div>
                     </div>
                 </div>
+                {/* <Lottie options={defaultOptions}
+                    height={400}
+                    width={400}
+                    isStopped={this.state.isStopped}
+                    isPaused={this.state.isPaused} /> */}
             </section>
             <Layout isHome={true}>
                 <div className="container">

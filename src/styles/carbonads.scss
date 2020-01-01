@@ -63,6 +63,8 @@
 @media (prefers-color-scheme: dark) {
     #carbonads {
         background-color: $dark !important;
-        color: white !important;
+        a {
+            color: white !important;
+        }
     }
 }

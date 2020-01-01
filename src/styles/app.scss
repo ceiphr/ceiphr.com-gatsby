@@ -74,8 +74,34 @@ code {
     }
 }
 
+// Homepage Hero
+
+.hero-homepage {
+    background-image: url("../../static/images/background.svg");
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hero-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 100%;
+    }
+
+    @media (max-width: 680px) {
+        & {
+            width: 100%;
+        }
+    }
+}
+
 .navbar {
-    background-color: rgba($color: #000000, $alpha: 0.9) !important;
+    background-color: rgba($color: $black, $alpha: 0.9) !important;
     height: 64px;
 
     .navbar-item:hover {
