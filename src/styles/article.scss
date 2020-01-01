@@ -2,10 +2,6 @@
 @import "syntax-highlighting.scss";
 @import "carbonads.scss";
 
-.tag a {
-    color: $white;
-}
-
 .post-recommendations {
     display: grid;
     justify-content: space-between;
@@ -23,7 +19,6 @@
 // Post Styling
 article {
     pre {
-        background: $dark !important;
         border-radius: $radius-large !important;
         border-width: 0 !important;
         code {

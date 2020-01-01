@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import logo from '../../../static/images/icons/ceiphr.svg'
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
@@ -46,8 +47,8 @@ class DefaultLayout extends React.Component {
                         <nav className="navbar is-fixed-top">
                             <div className="container">
                                 <div className="navbar-brand">
-                                    <a className="navbar-item" href="https://bulma.io">
-                                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+                                    <a className="navbar-item" href="/">
+                                        <img src={logo} alt="Ceiphr" width="32" height="48" />
                                     </a>
                                     <div className="navbar-burger burger" onClick={this.ToggleNav}>
                                         <span></span>

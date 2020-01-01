@@ -3,18 +3,17 @@
 
 // Update Bulma's global variables
 
-$primary: $turquoise;
-$link: $blue;
-$info: $cyan;
-$success: $green;
-$warning: $yellow;
-$danger: $red;
-$dark: $grey-darker;
-$text: $grey-dark;
+// $primary: #0051ba;
+// $link: #083d77;
+// $dark: #000000;
+// $text: $grey-dark;
 
-$family-sans-serif: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-$family-code: 'Roboto Mono', monospace;
-$body-background-color: $white-ter;
+// $scheme-invert: $black;
+// $text-invert: $white;
+
+$family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif;
+$family-code: "Roboto Mono", monospace;
+// $body-background-color: $white-ter;
 
 $radius-large: 8px;
 
@@ -28,19 +27,67 @@ $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
 $input-border-color: transparent;
 $input-shadow: none;
 
-// Index Styling
-
 .footer-links {
-    a:after { 
+    a:after {
         color: $black;
         content: " \00b7 ";
     }
-    a:last-child:after { content: none; }
+    a:last-child:after {
+        content: none;
+    }
 }
 
-.hero-body {
-    padding-left: 0px !important;
+code {
+    border-radius: 4px;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $white-ter;
+    }
+
+    body,
+    strong,
+    p,
+    .card,
+    .title {
+        color: $white !important;
+    }
+
+    a {
+        color: $link !important;
+    }
+
+    body {
+        background-color: $scheme-invert-ter !important;
+    }
+
+    code,
+    .card {
+        background-color: $dark !important;
+    }
+
+    .footer-links {
+        a:after {
+            color: $white;
+        }
+    }
+}
+
+.navbar {
+    background-color: rgba($color: #000000, $alpha: 0.9) !important;
+    height: 64px;
+
+    .navbar-item:hover {
+        background-color: $dark;
+    }
+
+    a {
+        color: $white !important;
+    }
+}
+
+// Index Styling
 
 .post-feed {
     display: grid;
@@ -79,7 +126,6 @@ $input-shadow: none;
 @import "../../node_modules/bulma/sass/elements/container.sass";
 @import "../../node_modules/bulma/sass/elements/title.sass";
 @import "../../node_modules/bulma/sass/elements/image.sass";
-@import "../../node_modules/bulma/sass/elements/tag.sass";
 @import "../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../node_modules/bulma/sass/components/card.sass";
 @import "../../node_modules/bulma/sass/components/media.sass";
