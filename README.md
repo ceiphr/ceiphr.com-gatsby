@@ -1,6 +1,5 @@
 # Ceiphr.com Gatsby
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ceiphr/ceiphr.com-gatsby/Node%20CI)
 [![Netlify](https://img.shields.io/netlify/1cbc5535-77bf-4896-b288-221005a33821)](https://app.netlify.com/sites/ceiphr/deploys)
 
 A rewrite of [www.ceiphr.com](https://www.ceiphr.com/) using reactjs, gatsby, and bulma. Hosted on Netlify.
@@ -75,8 +74,8 @@ Gatsby `develop` uses the `development` config in `.ghost.json` - while Gatsby `
 
 ## Credit
 
-This repository was originally based off of the Ghost Foundation's [gatsby-starter-ghost](https://github.com/TryGhost/gatsby-starter-ghost) starter
-template project which is licensed under the [MIT license](https://github.com/TryGhost/gatsby-starter-ghost/blob/master/LICENSE).
+This repository is based off of the Ghost Foundation's [gatsby-starter-ghost](https://github.com/TryGhost/gatsby-starter-ghost)
+template project; licensed under [MIT](https://github.com/TryGhost/gatsby-starter-ghost/blob/master/LICENSE).
 
 &nbsp;
 

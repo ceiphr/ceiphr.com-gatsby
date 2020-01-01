@@ -134,6 +134,7 @@ class Post extends React.Component {
 
 Post.propTypes = {
     data: PropTypes.shape({
+        allGhostPost: PropTypes.object.isRequired,
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
