@@ -83,6 +83,24 @@ code {
     overflow: hidden;
 }
 
+.hero-glyph {
+    position: absolute;
+    transform: translateX(50%);
+    right: 0;
+
+    height: 72rem;
+    top: -14rem;
+
+    @media (max-width: 980px) {
+        height: 54rem;
+        top: -11.5rem;
+    }
+    @media (max-width: 680px) {
+        height: 36rem;
+        top: -7.15rem;
+    }
+}
+
 .hero-banner {
     display: block;
     margin-left: auto;
@@ -91,6 +109,8 @@ code {
 
     img {
         width: 100%;
+        position: relative;
+        z-index: 1;
     }
 
     @media (max-width: 680px) {
@@ -100,9 +120,16 @@ code {
     }
 }
 
+.navbar-menu {
+    background-color: $black !important;
+}
+
 .navbar {
-    background-color: rgba($color: #000000, $alpha: 0.9) !important;
-    height: 64px;
+    background-color: $black !important;
+
+    @media (min-width: 1024px) {
+        height: 64px;
+    }
 
     .navbar-item:hover {
         background-color: $dark;

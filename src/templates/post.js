@@ -76,7 +76,7 @@ class Post extends React.Component {
                                                 <div className="content">
                                                     <div className="is-pulled-left">
                                                         <p>{post.primary_author.name}</p>
-                                                        <a href={"mailto: contact@ceiphr.com"}>contact@ceiphr.com</a>
+                                                        <a target="_blank" href="https://github.com/ceiphr">GitHub</a>
                                                     </div>
                                                     <div className="is-pulled-right">
                                                         <p className="has-text-right">{readingTime}</p>

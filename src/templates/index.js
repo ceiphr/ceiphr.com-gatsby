@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-// import Lottie from 'react-lottie';
+import Lottie from 'react-lottie';
 
 import banner from '../../static/images/logo.svg'
-// import * as glyphAnimation from '../../static/glyph.json'
+import animationData from '../../static/glyph.json'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
@@ -19,6 +19,14 @@ import { MetaData } from '../components/common/meta'
 */
 const Index = ({ data, location, pageContext }) => {
     const posts = data.allGhostPost.edges;
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
 
     return (
         <>
@@ -30,12 +38,10 @@ const Index = ({ data, location, pageContext }) => {
                             <img src={banner} alt="Ceiphr" />
                         </div>
                     </div>
+                    <div className="hero-glyph">
+                        <Lottie options={defaultOptions} />
+                    </div>
                 </div>
-                {/* <Lottie options={defaultOptions}
-                    height={400}
-                    width={400}
-                    isStopped={this.state.isStopped}
-                    isPaused={this.state.isPaused} /> */}
             </section>
             <Layout isHome={true}>
                 <div className="container">

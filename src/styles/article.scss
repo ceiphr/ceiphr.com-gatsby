@@ -45,16 +45,6 @@ article {
             grid-column: 4 / span 1;
         }
 
-        @media (max-width: 680px) {
-            .post-full-content {
-                grid-column: 1 / span 4;
-            }
-
-            .post-sidebar {
-                grid-column: 1 / span 4;
-            }
-        }
-
         .post-sidebar {
             max-width: 158px;
             font-size: 0.8em;
@@ -73,6 +63,27 @@ article {
                 position: -webkit-sticky; /* Safari */
                 position: sticky;
                 top: 6em;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .post-full-content {
+                grid-column: 1 / span 4;
+            }
+
+            .post-sidebar {
+                grid-column: 1 / span 4;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .post-side-widget,
+                #carbonads {
+                    height: 140px;
+                    font-size: 12px;
+                    display: block;
+                }
             }
         }
     }
