@@ -5,8 +5,6 @@ import Helmet from 'react-helmet';
 
 import { Tags } from '@tryghost/helpers-gatsby';
 import { readingTime as readingTimeHelper } from '@tryghost/helpers';
-
-import Disqus from 'disqus-react';
 import Prism from 'prismjs'
 
 import { Layout, PostCard, CarbonAds, Commento } from '../components/common'
