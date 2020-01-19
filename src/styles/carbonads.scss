@@ -53,10 +53,11 @@
         color: $link !important;
         padding-left: 0 !important;
         transition-duration: 200ms;
-
-        &:hover {
-            color: $dark !important;
-        }
+        
+        // TODO
+        // &:hover {
+        //     color: $b !important;
+        // }
     }
 }
 

@@ -9,7 +9,7 @@ import { readingTime as readingTimeHelper } from '@tryghost/helpers';
 import Disqus from 'disqus-react';
 import Prism from 'prismjs'
 
-import { Layout, PostCard } from '../components/common'
+import { Layout, PostCard, CarbonAds, Commento } from '../components/common'
 import { MetaData } from '../components/common/meta'
 
 /**
@@ -41,9 +41,9 @@ class Post extends React.Component {
         };
 
         // Implements Carbon Ads. Thanks @stevenmirabito (https://github.com/stevenmirabito) for helping me with this.
-        const createCarbonTag = () => ({
-            __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script>'
-        });
+        // const createCarbonTag = () => ({
+        //     __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script>'
+        // });
 
         return (
             <>
@@ -112,9 +112,7 @@ class Post extends React.Component {
                                                 </p>
                                             </a>
                                         </div>
-                                        <div
-                                            dangerouslySetInnerHTML={createCarbonTag()}
-                                        />
+                                        <CarbonAds/>
                                     </div>
                                 </section>
                             </div>
@@ -124,7 +122,8 @@ class Post extends React.Component {
                                 <PostCard key={node.id} post={node} />
                             ))}
                         </div>
-                        <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+                        {/* <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */}
+                        <Commento id={post.slug}/>
                     </div>
                 </Layout>
             </>

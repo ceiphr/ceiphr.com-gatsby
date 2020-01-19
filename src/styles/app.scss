@@ -3,7 +3,7 @@
 
 // Update Bulma's global variables
 
-$black: #000000;
+// $black: #000000;
 // $primary: #0051ba;
 // $link: #083d77;
 // $dark: #000000;
@@ -38,20 +38,33 @@ $input-shadow: none;
     }
 }
 
+body {
+    background-color: $white-ter;
+}
+
 code {
     border-radius: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: $white-ter;
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
     }
+}
 
+@media (prefers-color-scheme: dark) {
     body,
     strong,
     p,
     .card,
-    .title {
+    .title,
+    .commento-root *,
+    .commento-footer,
+    .commento-logo-container,
+    .commento-logo-text,
+    #commento-textarea-super-container-root b,
+    #commento-textarea-super-container-root a {
         color: $white !important;
     }
 
@@ -59,12 +72,24 @@ code {
         color: $link !important;
     }
 
+    .commento-email-button {
+        border-left: 0px !important;
+    }
+
+    .commento-email,
+    .commento-email *,
     body {
         background-color: $scheme-invert-ter !important;
     }
 
+    .commento-login-box-container,
+    .commento-login-box {
+        background-color: $black !important;
+    }
+
     code,
-    .card {
+    .card,
+    #commento-textarea-root {
         background-color: $dark !important;
     }
 
@@ -123,7 +148,7 @@ code {
 // }
 
 .is-transparent {
-    background-color: rgba(0, 0, 0, 0.0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
     color: white !important;
 
     .navbar-burger {
