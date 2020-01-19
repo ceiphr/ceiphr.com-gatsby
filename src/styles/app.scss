@@ -46,6 +46,14 @@ code {
     border-radius: 4px;
 }
 
+.commento-root {
+    margin-bottom: -4rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
 .commento-markdown-help {
     pre {
         padding: 0 0 !important;
@@ -190,6 +198,47 @@ code {
     justify-content: space-between;
     grid-gap: 2em;
     grid-template-columns: 1fr;
+
+    @media (min-width: 980px) {
+        .card {
+            height: 100%;
+        }
+
+        .card-image {
+            float: right;
+            width: 50%;
+            .post-card-image {
+                border-top-right-radius: $radius-large;
+                border-bottom-right-radius: $radius-large;
+
+                height: 14rem;
+                margin: 0;
+                object-fit: cover;
+                position: relative;
+            }
+        }
+
+        .card-content {
+            float: left;
+            width: 50%;
+        }
+    }
+
+    @media (max-width: 980px) {
+        .card {
+            .post-card-image {
+                border-top-left-radius: $radius-large;
+                border-top-right-radius: $radius-large;
+            }
+        }
+    }
+}
+
+.post-recommendations {
+    .post-card-image {
+        border-top-left-radius: $radius-large;
+        border-top-right-radius: $radius-large;
+    }
 }
 
 .card {
@@ -197,8 +246,6 @@ code {
     transition-duration: 200ms;
 
     .post-card-image {
-        border-top-left-radius: $radius-large;
-        border-top-right-radius: $radius-large;
         margin: 0 0 10px 0;
         width: auto;
         height: 200px;
