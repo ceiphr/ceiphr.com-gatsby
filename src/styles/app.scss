@@ -126,6 +126,14 @@ code {
     overflow: hidden;
 }
 
+.hero-glyph__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    overflow: hidden;
+}
+
 .hero-glyph {
     position: absolute;
     transform: translateX(50%);
@@ -133,7 +141,6 @@ code {
     right: 0;
     width: 75vw;
     height: 50vh;
-    overflow: hidden;
 
     // @media (max-width: 980px) {
     // }

@@ -34,7 +34,7 @@ class Index extends React.Component {
             rendererSettings: {
                 preserveAspectRatio: 'xMidYMid slice'
             }
-        };   
+        };
 
         return (
             <>
@@ -46,8 +46,10 @@ class Index extends React.Component {
                                 <img src={banner} alt="Ceiphr" />
                             </div>
                         </div>
-                        <div className="hero-glyph">
-                            <Lottie options={defaultOptions} />
+                        <div className="hero-glyph__wrapper">
+                            <div className="hero-glyph">
+                                <Lottie options={defaultOptions} />
+                            </div>
                         </div>
                     </div>
                 </section>
