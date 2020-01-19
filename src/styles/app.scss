@@ -125,10 +125,18 @@ code {
 .is-transparent {
     background-color: rgba(0, 0, 0, 0.0) !important;
     color: white !important;
+
+    .navbar-burger {
+        color: white;
+    }
 }
 
 .navbar {
-    transition-duration: 400ms;
+    position: absolute !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
 
     @media (min-width: 1024px) {
         height: 64px;
@@ -147,6 +155,7 @@ code {
 
 .post-feed {
     transform: translateY(-6rem);
+    margin-bottom: -6rem;
     display: grid;
     justify-content: space-between;
     grid-gap: 2em;

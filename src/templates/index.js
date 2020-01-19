@@ -24,28 +24,6 @@ class Index extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.handleScroll();
-        window.addEventListener('scroll', this.handleScroll, true);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-        var navbar = document.getElementById("navbar");
-
-        if (window.scrollY > 10) {
-            navbar.classList.add('is-black');
-            navbar.classList.remove('is-transparent');
-
-        } else {
-            navbar.classList.remove('is-black');
-            navbar.classList.add('is-transparent');
-        }
-    }
-
     render() {
         const { data, location, pageContext } = this.props;
         const posts = data.allGhostPost.edges;

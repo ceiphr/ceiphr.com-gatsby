@@ -29,8 +29,28 @@ class DefaultLayout extends React.Component {
         this.setState({ navVisibility: !this.state.navVisibility })
     }
 
-    // componentDidMount = () => {
-    //     window.addEventListener('scroll', this.handleScroll);
+    // componentDidMount() {
+    //     this.updateNavTransparency();
+    //     window.addEventListener('scroll', this.updateNavTransparency, true);
+    // }
+
+    // componentWillUnmount() {
+    //     window.removeEventListener('scroll', this.updateNavTransparency);
+    // }
+
+    // updateNavTransparency = () => {
+    //     var navbar = document.getElementById("navbar");
+    //     console.log(this.props.isHome);
+    //     if (this.props.isHome) {
+    //         if (window.scrollY > 10) {
+    //             navbar.classList.add('is-black');
+    //             navbar.classList.remove('is-transparent');
+
+    //         } else {
+    //             navbar.classList.remove('is-black');
+    //             navbar.classList.add('is-transparent');
+    //         }
+    //     }
     // }
 
     render() {
@@ -48,7 +68,7 @@ class DefaultLayout extends React.Component {
                 <div className="viewport">
                     <div className="viewport-top">
                         {/* The main header section on top of the screen */}
-                        <nav id="navbar" className="navbar is-black is-fixed-top">
+                        <nav id="navbar" className={"navbar " + (this.props.isHome ? "is-transparent" : "is-black")}>
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="/">
