@@ -42,38 +42,38 @@ code {
     border-radius: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: $white-ter;
-    }
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: $white-ter;
+//     }
 
-    body,
-    strong,
-    p,
-    .card,
-    .title {
-        color: $white !important;
-    }
+//     body,
+//     strong,
+//     p,
+//     .card,
+//     .title {
+//         color: $white !important;
+//     }
 
-    a {
-        color: $link !important;
-    }
+//     a {
+//         color: $link !important;
+//     }
 
-    body {
-        background-color: $scheme-invert-ter !important;
-    }
+//     body {
+//         background-color: $scheme-invert-ter !important;
+//     }
 
-    code,
-    .card {
-        background-color: $dark !important;
-    }
+//     code,
+//     .card {
+//         background-color: $dark !important;
+//     }
 
-    .footer-links {
-        a:after {
-            color: $white;
-        }
-    }
-}
+//     .footer-links {
+//         a:after {
+//             color: $white;
+//         }
+//     }
+// }
 
 // Homepage Hero
 
@@ -86,18 +86,16 @@ code {
 .hero-glyph {
     position: absolute;
     transform: translateX(50%);
+    top: 0;
     right: 0;
+    width: 75vw;
+    height: 50vh;
+    overflow: hidden;
 
-    height: 72rem;
-    top: -14rem;
-
-    @media (max-width: 980px) {
-        height: 54rem;
-        top: -11.5rem;
-    }
+    // @media (max-width: 980px) {
+    // }
     @media (max-width: 680px) {
-        height: 36rem;
-        top: -7.15rem;
+        width: 150vw;
     }
 }
 
@@ -120,12 +118,17 @@ code {
     }
 }
 
-.navbar-menu {
-    background-color: $black !important;
+// .navbar-menu {
+//     background-color: $black !important;
+// }
+
+.is-transparent {
+    background-color: rgba(0, 0, 0, 0.0) !important;
+    color: white !important;
 }
 
 .navbar {
-    background-color: $black !important;
+    transition-duration: 400ms;
 
     @media (min-width: 1024px) {
         height: 64px;
@@ -143,6 +146,7 @@ code {
 // Index Styling
 
 .post-feed {
+    transform: translateY(-6rem);
     display: grid;
     justify-content: space-between;
     grid-gap: 2em;

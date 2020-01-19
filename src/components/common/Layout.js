@@ -29,6 +29,10 @@ class DefaultLayout extends React.Component {
         this.setState({ navVisibility: !this.state.navVisibility })
     }
 
+    // componentDidMount = () => {
+    //     window.addEventListener('scroll', this.handleScroll);
+    // }
+
     render() {
         const { data, children, bodyClass, isHome } = this.props;
         const site = data.allGhostSettings.edges[0].node;

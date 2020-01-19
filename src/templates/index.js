@@ -17,45 +17,76 @@ import { MetaData } from '../components/common/meta'
 * in /utils/siteConfig.js under `postsPerPage`.
 *
 */
-const Index = ({ data, location, pageContext }) => {
-    const posts = data.allGhostPost.edges;
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
 
-    return (
-        <>
-            <MetaData location={location} />
-            <section className="hero hero-homepage is-medium section">
-                <div className="hero-body">
-                    <div className="container">
-                        <div className="hero-banner">
-                            <img src={banner} alt="Ceiphr" />
+class Index extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        this.handleScroll();
+        window.addEventListener('scroll', this.handleScroll, true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        var navbar = document.getElementById("navbar");
+
+        if (window.scrollY > 10) {
+            navbar.classList.add('is-black');
+            navbar.classList.remove('is-transparent');
+
+        } else {
+            navbar.classList.remove('is-black');
+            navbar.classList.add('is-transparent');
+        }
+    }
+
+    render() {
+        const { data, location, pageContext } = this.props;
+        const posts = data.allGhostPost.edges;
+        const defaultOptions = {
+            loop: true,
+            autoplay: true,
+            animationData: animationData,
+            rendererSettings: {
+                preserveAspectRatio: 'xMidYMid slice'
+            }
+        };   
+
+        return (
+            <>
+                <MetaData location={location} />
+                <section className="hero hero-homepage is-halfheight section">
+                    <div className="hero-body">
+                        <div className="container">
+                            <div className="hero-banner">
+                                <img src={banner} alt="Ceiphr" />
+                            </div>
+                        </div>
+                        <div className="hero-glyph">
+                            <Lottie options={defaultOptions} />
                         </div>
                     </div>
-                    <div className="hero-glyph">
-                        <Lottie options={defaultOptions} />
+                </section>
+                <Layout isHome={true}>
+                    <div className="container">
+                        <section className="post-feed">
+                            {posts.map(({ node }) => (
+                                // The tag below includes the markup for each post - components/common/PostCard.js
+                                <PostCard key={node.id} post={node} />
+                            ))}
+                        </section>
+                        <Pagination pageContext={pageContext} />
                     </div>
-                </div>
-            </section>
-            <Layout isHome={true}>
-                <div className="container">
-                    <section className="post-feed">
-                        {posts.map(({ node }) => (
-                            // The tag below includes the markup for each post - components/common/PostCard.js
-                            <PostCard key={node.id} post={node} />
-                        ))}
-                    </section>
-                    <Pagination pageContext={pageContext} />
-                </div>
-            </Layout>
-        </>
-    )
+                </Layout>
+            </>
+        )
+    }
 }
 
 Index.propTypes = {
