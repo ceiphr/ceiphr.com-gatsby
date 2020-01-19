@@ -31,11 +31,11 @@ const CarbonAds = ({id}) => {
     const document = window.document;
     // In case our #carbonads container exists we can add our carbonads script
     if (document.getElementById('carbonads__wrapper')) {
-      insertScript(`https:cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom`, `_carbonads_js`, window.document.getElementById(`carbonads__wrapper`));
+      insertScript(`https://cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom`, `_carbonads_js`, window.document.getElementById(`carbonads__wrapper`));
     }
 
     // Cleanup; remove the script from the page
-    return () => removeScript(`carbonads-script`, window.document.getElementById(`carbonads__wrapper`));
+    return () => removeScript(`_carbonads_js`, window.document.getElementById(`carbonads__wrapper`));
   }, [id]);
 
   return <div id={`carbonads__wrapper`} />
