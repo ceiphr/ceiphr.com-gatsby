@@ -156,9 +156,13 @@ code {
     }
 }
 
-// .navbar-menu {
-//     background-color: $black !important;
-// }
+.navbar-menu.is-active {
+    transition-duration: 200ms !important;
+}
+
+.navbar-menu {
+    background-color: $black !important;
+}
 
 .is-transparent {
     background-color: rgba(0, 0, 0, 0) !important;

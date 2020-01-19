@@ -30,34 +30,73 @@
         overflow: hidden;
     }
 
-    .carbon-img {
-        display: block;
+    @media (min-width: 680px) {
+        .carbon-img {
+            display: block;
 
-        img {
-            width: 100% !important;
-            max-width: 100% !important;
+            img {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            margin-bottom: 8px;
+            line-height: 1;
         }
 
-        margin-bottom: 8px;
-        line-height: 1;
+        .carbon-text {
+            padding-left: 0 !important;
+            margin-top: 120px !important;
+            margin-bottom: 8px;
+            color: #637381;
+        }
+
+        .carbon-poweredby {
+            padding-left: 0 !important;
+            font-size: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
     }
 
-    .carbon-text {
-        padding-left: 0 !important;
-        margin-top: 120px !important;
-        margin-bottom: 8px;
-        color: #637381;
-    }
+    @media (max-width: 680px) {
+        height: 100% !important;
 
-    .carbon-poweredby {
-        color: $link !important;
-        padding-left: 0 !important;
-        transition-duration: 200ms;
-        
-        // TODO
-        // &:hover {
-        //     color: $b !important;
-        // }
+        & span {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .carbon-img {
+            float: left;
+            margin-right: 1em;
+        }
+
+        .carbon-img img {
+            display: block;
+        }
+
+        .carbon-text {
+            display: block;
+            float: left;
+            max-width: calc(100% - 130px - 1em);
+            text-align: left;
+            color: $dark;
+        }
+
+        .carbon-poweredby {
+            position: absolute;
+            left: 142px;
+            bottom: 0;
+            display: block;
+            font-size: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
     }
 }
 

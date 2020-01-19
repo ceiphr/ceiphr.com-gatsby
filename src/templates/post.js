@@ -100,9 +100,9 @@ class Post extends React.Component {
                                 </section>
                                 <section className="post-sidebar">
                                     <div className="post-sidebar-widgets">
-                                        <div className="card">
+                                        <div className="card referral">
                                             <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
-                                                <div>
+                                                <div className="referral__logo">
                                                     <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
                                                 </div>
                                                 <p>

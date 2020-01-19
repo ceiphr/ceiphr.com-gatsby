@@ -44,13 +44,13 @@ class DefaultLayout extends React.Component {
                 <div className="viewport">
                     <div className="viewport-top">
                         {/* The main header section on top of the screen */}
-                        <nav id="navbar" className={"navbar " + (this.props.isHome ? "is-transparent" : "is-black")}>
+                        <nav id="navbar" className={"navbar " + ((this.props.isHome && this.state.navVisibility) ? "is-transparent" : "is-black")}>
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="/">
                                         <img src={logo} alt="Ceiphr" width="32" height="48" />
                                     </a>
-                                    <div className="navbar-burger burger" onClick={this.ToggleNav}>
+                                    <div className={this.state.navVisibility ? "navbar-burger burger" : "navbar-burger burger is-active"} onClick={this.ToggleNav}>
                                         <span></span>
                                         <span></span>
                                         <span></span>
