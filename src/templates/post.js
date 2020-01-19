@@ -31,12 +31,6 @@ class Post extends React.Component {
         const post = data.ghostPost;
         const nextPost = data.allGhostPost.edges;
         const readingTime = readingTimeHelper(post);
-        const disqusShortname = 'ceiphr';
-        const disqusConfig = {
-            url: post.url,
-            identifier: post.slug,
-            title: post.title,
-        };
 
         // Implements Carbon Ads. Thanks @stevenmirabito (https://github.com/stevenmirabito) for helping me with this.
         // const createCarbonTag = () => ({

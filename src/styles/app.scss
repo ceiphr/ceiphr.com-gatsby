@@ -172,8 +172,10 @@ code {
     transition-duration: 200ms !important;
 }
 
-.navbar-menu {
-    background-color: $black !important;
+@media (max-width: 980px) {
+    .navbar-menu {
+        background-color: $black !important;
+    }
 }
 
 .is-transparent {

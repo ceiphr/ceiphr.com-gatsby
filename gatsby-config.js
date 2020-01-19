@@ -146,15 +146,6 @@ module.exports = {
                             }
                         }
                     }
-                    allGhostAuthor {
-                        edges {
-                            node {
-                                id
-                                slug
-                                profile_image
-                            }
-                        }
-                    }
                 }`,
                 mapping: {
                     allGhostPost: {
