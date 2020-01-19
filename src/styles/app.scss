@@ -61,6 +61,11 @@ code {
     }
 }
 
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
+}
+
 @media (prefers-color-scheme: dark) {
     body,
     strong,
