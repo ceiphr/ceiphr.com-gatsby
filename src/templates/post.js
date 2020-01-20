@@ -86,6 +86,11 @@ class Post extends React.Component {
                                         className="content-body load-external-scripts"
                                         dangerouslySetInnerHTML={{ __html: post.html }}
                                     />
+                                    <div>
+                                        This article is licensed under <a rel="noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.
+                                        You may redistribute this article if you follow the terms of the license.
+                                    </div>
+                                    <br />
                                 </section>
                                 <section className="post-sidebar">
                                     <div className="post-sidebar-widgets">
@@ -99,7 +104,7 @@ class Post extends React.Component {
                                                 </p>
                                             </a>
                                         </div>
-                                        <CarbonAds/>
+                                        <CarbonAds />
                                     </div>
                                 </section>
                             </div>
@@ -110,7 +115,7 @@ class Post extends React.Component {
                             ))}
                         </div>
                         {/* <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} /> */}
-                        <Commento id={post.slug}/>
+                        <Commento id={post.slug} />
                     </div>
                 </Layout>
             </>
