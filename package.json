@@ -1,13 +1,13 @@
 {
-  "name": "gatsby-starter-ghost",
-  "description": "A starter template to build lightning fast websites with Ghost and Gatsby",
+  "name": "gatsby-theme-ceiphr",
+  "description": "A rewrite of www.ceiphr.com using reactjs, gatsby, and bulma. Hosted on Netlify.",
   "version": "1.0.0",
-  "license": "MIT",
-  "author": "Ghost Foundation",
-  "homepage": "https://docs.ghost.org/api/gatsby/",
+  "license": "GPL-3.0",
+  "author": "Ari Birnbaum",
+  "homepage": "https://www.ceiphr.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tryghost/gatsby-starter-ghost.git"
+    "url": "git+https://github.com/ceiphr/gatsby-theme-ceiphr.git"
   },
   "resolutions": {
     "sharp": "0.22.1"
@@ -16,7 +16,7 @@
     "node": ">= 8.9.0"
   },
   "bugs": {
-    "url": "https://github.com/tryghost/gatsby-starter-ghost/issues"
+    "url": "https://github.com/ceiphr/gatsby-theme-ceiphr/issues"
   },
   "keywords": [
     "gatsby",

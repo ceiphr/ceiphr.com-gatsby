@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "stable"
+  - "lts/*"
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+  - node_modules
+
+before_script:
+  - yarn install --pure-lockfile
+  - yarn run lint
+
+script:
+  - gatsby build

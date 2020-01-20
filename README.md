@@ -14,12 +14,12 @@ A rewrite of [www.ceiphr.com](https://www.ceiphr.com/) using reactjs, gatsby, an
 
 ```bash
 # With Gatsby CLI
-gatsby new ceiphr.com-gatsby https://github.com/ceiphr/ceiphr.com-gatsby.git
+gatsby new  gatsby-theme-ceiphr https://github.com/ceiphr/gatsby-theme-ceiphr.git
 ```
 
 ```bash
 # From Source
-git clone https://github.com/ceiphr/ceiphr.com-gatsby.git
+git clone https://github.com/ceiphr/gatsby-theme-ceiphr.git
 cd ceiphr.com-gatsby
 ```
 
