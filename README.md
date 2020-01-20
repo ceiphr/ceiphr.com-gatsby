@@ -14,7 +14,7 @@ A rewrite of [www.ceiphr.com](https://www.ceiphr.com/) using reactjs, gatsby, an
 
 ```bash
 # With Gatsby CLI
-gatsby new  gatsby-theme-ceiphr https://github.com/ceiphr/gatsby-theme-ceiphr.git
+gatsby new gatsby-theme-ceiphr https://github.com/ceiphr/gatsby-theme-ceiphr.git
 ```
 
 ```bash
@@ -81,4 +81,4 @@ template project; licensed under [MIT](https://github.com/TryGhost/gatsby-starte
 
 ## Copyright & License
 
-Copyright (c) 2016-2019 Ari Birnbaum (Ceiphr) - Released under the [GNU GENERAL PUBLIC LICENSE](LICENSE).
+Copyright (c) 2016 - 2019 Ari Birnbaum (Ceiphr) - Released under the [GNU GENERAL PUBLIC LICENSE](LICENSE).

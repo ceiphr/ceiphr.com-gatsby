@@ -72,13 +72,13 @@ class DefaultLayout extends React.Component {
                             <div className="container">
                                 <div className="has-text-centered">
                                     <p className="footer-links">
-                                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr">GitHub</a>
-                                        <a target="_blank" rel="noopener noreferrer" href="https://dribbble.com/ceiphr">Dribbble</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr/">GitHub</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://dribbble.com/ceiphr/">Dribbble</a>
                                         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ceiphr/">LinkedIn</a>
                                         <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ceiphr/">Instagram</a>
                                         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ceiphr/">Twitter</a>
                                     </p>
-                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website&apos;s source code is licensed under <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr/gatsby-theme-ceiphr/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
+                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website&apos;s source code is licensed under <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr/gatsby-theme-ceiphr/blob/master/LICENSE/">GNU GPL v3.0</a>.</p>
                                 </div>
                             </div>
                         </footer>
