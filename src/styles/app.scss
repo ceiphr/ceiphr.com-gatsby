@@ -15,6 +15,11 @@ $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
 $input-border-color: transparent;
 $input-shadow: none;
 
+html,
+body {
+    background: $white-ter !important;
+}
+
 ::selection {
     text-shadow: none;
     background: $primary;
