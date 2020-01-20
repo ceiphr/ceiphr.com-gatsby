@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
-import { Tags } from '@tryghost/helpers-gatsby';
-import { readingTime as readingTimeHelper } from '@tryghost/helpers';
+import { Tags } from '@tryghost/helpers-gatsby'
+import { readingTime as readingTimeHelper } from '@tryghost/helpers'
 import Prism from 'prismjs'
 
 import { Layout, PostCard, CarbonAds, Commento } from '../components/common'
@@ -19,7 +19,7 @@ import { MetaData } from '../components/common/meta'
 
 class Post extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     componentDidMount() {
@@ -27,10 +27,10 @@ class Post extends React.Component {
     }
 
     render() {
-        const { data, location } = this.props;
-        const post = data.ghostPost;
-        const nextPost = data.allGhostPost.edges;
-        const readingTime = readingTimeHelper(post);
+        const { data, location } = this.props
+        const post = data.ghostPost
+        const nextPost = data.allGhostPost.edges
+        const readingTime = readingTimeHelper(post)
 
         return (
             <>
@@ -63,7 +63,7 @@ class Post extends React.Component {
                                                 <div className="content">
                                                     <div className="is-pulled-left">
                                                         <p>{post.primary_author.name}</p>
-                                                        <a target="_blank" href="https://github.com/ceiphr/">GitHub</a>
+                                                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr/">GitHub</a>
                                                     </div>
                                                     <div className="is-pulled-right">
                                                         <p className="has-text-right">{readingTime}</p>
@@ -92,7 +92,7 @@ class Post extends React.Component {
                                         <div className="card referral">
                                             <a href="https://m.do.co/c/b95c2a8a5568" aria-label="DigitalOcean" rel="noopener">
                                                 <div className="referral__logo">
-                                                    <img src={"/images/icons/do.svg"} alt="DigitalOcean" />
+                                                    <img src={`/images/icons/do.svg`} alt="DigitalOcean" />
                                                 </div>
                                                 <p>
                                                     This website is hosted on DigitalOcean. Use my referral link for a discount.
@@ -124,6 +124,9 @@ Post.propTypes = {
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
+            primary_author: PropTypes.string.isRequired,
+            tags: PropTypes.string.isRequired,
+            slug: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
         }).isRequired,

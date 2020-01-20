@@ -29,7 +29,7 @@ const Tag = ({ data, location, pageContext }) => {
                             <h1 className="title">
                                 {tag.name}
                             </h1>
-                            <h2 class="subtitle">
+                            <h2 className="subtitle">
                                 {tag.description ? <p>{tag.description}</p> : null}
                             </h2>
                         </div>

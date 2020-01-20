@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import { Navigation } from '.'
 import logo from '../../../static/images/icons/ceiphr.svg'
@@ -19,8 +19,8 @@ import '../../styles/app.scss'
 */
 class DefaultLayout extends React.Component {
     constructor(props) {
-        super(props);
-        this.state = { navVisibility: true };
+        super(props)
+        this.state = { navVisibility: true }
     }
 
     ToggleNav = () => {
@@ -28,8 +28,8 @@ class DefaultLayout extends React.Component {
     }
 
     render() {
-        const { data, children, bodyClass, isHome } = this.props;
-        const site = data.allGhostSettings.edges[0].node;
+        const { data, children, bodyClass } = this.props
+        const site = data.allGhostSettings.edges[0].node
 
         return (
             <>
@@ -42,19 +42,19 @@ class DefaultLayout extends React.Component {
                 <div className="viewport">
                     <div className="viewport-top">
                         {/* The main header section on top of the screen */}
-                        <nav id="navbar" className={"navbar " + ((this.props.isHome && this.state.navVisibility) ? "is-transparent" : "is-black")}>
+                        <nav id="navbar" className={`navbar ` + ((this.props.isHome && this.state.navVisibility) ? `is-transparent` : `is-black`)}>
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="/">
                                         <img src={logo} alt="Ceiphr" width="32" height="48" />
                                     </a>
-                                    <div className={this.state.navVisibility ? "navbar-burger burger" : "navbar-burger burger is-active"} onClick={this.ToggleNav}>
+                                    <div className={this.state.navVisibility ? `navbar-burger burger` : `navbar-burger burger is-active`} onClick={this.ToggleNav}>
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                     </div>
                                 </div>
-                                <div className={this.state.navVisibility ? "navbar-menu" : "navbar-menu is-active"}>
+                                <div className={this.state.navVisibility ? `navbar-menu` : `navbar-menu is-active`}>
                                     <div className="navbar-end">
                                         <Navigation data={site.navigation} navClass="navbar-item" />
                                     </div>
@@ -72,13 +72,13 @@ class DefaultLayout extends React.Component {
                             <div className="container">
                                 <div className="has-text-centered">
                                     <p className="footer-links">
-                                        <a target="_blank" href="https://github.com/ceiphr">GitHub</a>
-                                        <a target="_blank" href="https://dribbble.com/ceiphr">Dribbble</a>
-                                        <a target="_blank" href="https://www.linkedin.com/in/ceiphr/">LinkedIn</a>
-                                        <a target="_blank" href="https://www.instagram.com/ceiphr/">Instagram</a>
-                                        <a target="_blank" href="https://twitter.com/ceiphr/">Twitter</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr">GitHub</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://dribbble.com/ceiphr">Dribbble</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ceiphr/">LinkedIn</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ceiphr/">Instagram</a>
+                                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ceiphr/">Twitter</a>
                                     </p>
-                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website's source code is licensed under <a href="https://github.com/ceiphr/ceiphr.com-gatsby/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
+                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website&apos;s source code is licensed under <a href="https://github.com/ceiphr/ceiphr.com-gatsby/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
                                 </div>
                             </div>
                         </footer>

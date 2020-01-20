@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie'
 
 import banner from '../../static/images/logo.svg'
 import animationData from '../../static/glyph.json'
@@ -19,22 +19,21 @@ import { MetaData } from '../components/common/meta'
 */
 
 class Index extends React.Component {
-
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     render() {
-        const { data, location, pageContext } = this.props;
-        const posts = data.allGhostPost.edges;
+        const { data, location, pageContext } = this.props
+        const posts = data.allGhostPost.edges
         const defaultOptions = {
             loop: true,
             autoplay: true,
             animationData: animationData,
             rendererSettings: {
-                preserveAspectRatio: 'xMidYMid slice'
-            }
-        };
+                preserveAspectRatio: `xMidYMid slice`,
+            },
+        }
 
         return (
             <>
