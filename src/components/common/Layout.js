@@ -78,7 +78,7 @@ class DefaultLayout extends React.Component {
                                         <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ceiphr/">Instagram</a>
                                         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ceiphr/">Twitter</a>
                                     </p>
-                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website&apos;s source code is licensed under <a href="https://github.com/ceiphr/ceiphr.com-gatsby/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
+                                    <p>2016 &mdash; 2020 Ari Birnbaum ({site.title}). This website&apos;s source code is licensed under <a target="_blank" rel="noopener noreferrer" href="https://github.com/ceiphr/gatsby-theme-ceiphr/blob/master/LICENSE">GNU GPL v3.0</a>.</p>
                                 </div>
                             </div>
                         </footer>
