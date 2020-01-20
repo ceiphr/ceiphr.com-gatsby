@@ -2,13 +2,7 @@
 @import "syntax-highlighting.scss";
 @import "carbonads.scss";
 
-.post-recommendations {
-    display: grid;
-    justify-content: space-between;
-    grid-gap: 1em;
-    margin-bottom: 1em;
-    grid-template-columns: 1fr 1fr;
-}
+// Mobile version of the sidebar
 
 @media (max-width: 680px) {
     .post-recommendations {
@@ -35,7 +29,9 @@
     }
 }
 
-// Post Styling
+// Post styling used for formatting
+// images, the body and sidebar content
+
 article {
     pre {
         border-radius: $radius-large !important;
@@ -118,4 +114,44 @@ article {
     img {
         border-radius: $radius-large;
     }
+}
+
+// Footer recommendations for the most recent
+// articles published
+
+.post-recommendations {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 1em;
+    margin-bottom: 1em;
+    grid-template-columns: 1fr 1fr;
+
+    .post-card-image {
+        border-top-left-radius: $radius-large;
+        border-top-right-radius: $radius-large;
+    }
+
+}
+
+// Commento tweaks for looking
+// similar to Bulma styles
+
+.commento-root {
+    margin-bottom: -4rem;
+}
+
+.commento-logo-text {
+    display: none !important;
+}
+
+.commento-markdown-help {
+    pre {
+        padding: 0 0 !important;
+        border-radius: 2px;
+    }
+}
+
+#commento-textarea-container-root,
+.commento-root textarea {
+    border-radius: $radius-large !important;
 }

@@ -1,9 +1,11 @@
+// Styles used for formatting the general
+// post text and media
+
 .post-full-content {
     overflow: hidden;
 
-    ::selection {
-        text-shadow: none;
-        background: #cbeafb;
+    code {
+        border-radius: 4px;
     }
 
     hr {
@@ -96,7 +98,7 @@
     blockquote {
         margin: 0.3em 0 1.8em;
         padding: 0 1.6em 0 1.6em;
-        border-left: #cbeafb 0.5em solid;
+        border-left: $white 0.5em solid;
     }
 
     blockquote p {
@@ -124,7 +126,7 @@
     }
 
     a {
-        color: #26a8ed;
+        color: $link;
         text-decoration: none;
     }
 

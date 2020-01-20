@@ -32,11 +32,6 @@ class Post extends React.Component {
         const nextPost = data.allGhostPost.edges;
         const readingTime = readingTimeHelper(post);
 
-        // Implements Carbon Ads. Thanks @stevenmirabito (https://github.com/stevenmirabito) for helping me with this.
-        // const createCarbonTag = () => ({
-        //     __html: '<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7I62QM&placement=ceiphrcom" id="_carbonads_js"></script>'
-        // });
-
         return (
             <>
                 <MetaData

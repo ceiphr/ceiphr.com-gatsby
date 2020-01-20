@@ -1,4 +1,5 @@
-// Carbon Ads
+// Styles for overriding the generic styles
+// used on carbon ads
 
 .carbon-ads-wrapper {
     margin-top: 2em !important;
@@ -64,6 +65,8 @@
         }
     }
 
+    // Mobile formatting of carbon ads
+
     @media (max-width: 680px) {
         height: 100% !important;
 
@@ -103,6 +106,8 @@
         }
     }
 }
+
+// Dark theming of carbon ads
 
 @media (prefers-color-scheme: dark) {
     #carbonads {

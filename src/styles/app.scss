@@ -1,20 +1,8 @@
 @charset "utf-8";
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
 
-// Update Bulma's global variables
-
-// $black: #000000;
-// $primary: #0051ba;
-// $link: #083d77;
-// $dark: #000000;
-// $text: $grey-dark;
-
-// $scheme-invert: $black;
-// $text-invert: $white;
-
 $family-sans-serif: "Roboto", "Helvetica Neue", Arial, sans-serif;
 $family-code: "Roboto Mono", monospace;
-// $body-background-color: $white-ter;
 
 $radius-large: 8px;
 
@@ -24,9 +12,35 @@ $card-shadow: 0 0.2em 0.5em -0.125em rgba($scheme-invert, 0.1),
     0 0px 0 1px rgba($scheme-invert, 0.02);
 
 // Update some of Bulma's component variables
-
 $input-border-color: transparent;
 $input-shadow: none;
+
+::selection {
+    text-shadow: none;
+    background: $primary;
+}
+
+// Component styles used for generaly styling
+// generic components which are frequently used
+
+.card {
+    border-radius: $radius-large;
+    transition-duration: 200ms;
+
+    .post-card-image {
+        margin: 0 0 10px 0;
+        width: auto;
+        height: 200px;
+        background: no-repeat center center;
+        background-size: cover;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
+            0 0px 0 1px rgba($scheme-invert, 0.02);
+    }
+}
 
 .footer-links {
     a:after {
@@ -42,145 +56,8 @@ body {
     background-color: $white-ter;
 }
 
-code {
-    border-radius: 4px;
-}
-
-.commento-root {
-    margin-bottom: -4rem;
-}
-
-.commento-logo-text {
-    display: none !important;
-}
-
-.commento-markdown-help {
-    pre {
-        padding: 0 0 !important;
-        border-radius: 2px;
-    }
-}
-
-#commento-textarea-container-root,
-.commento-root textarea {
-    border-radius: $radius-large !important;
-}
-
-@media (prefers-color-scheme: dark) {
-    body,
-    strong,
-    p,
-    .card,
-    .title,
-    .commento-root *,
-    .commento-footer,
-    .commento-logo-container,
-    .commento-logo-text,
-    #commento-textarea-super-container-root b,
-    #commento-textarea-super-container-root a {
-        color: $white !important;
-    }
-
-    a {
-        color: $link !important;
-    }
-
-    .commento-email-button {
-        border-left: 0px !important;
-    }
-
-    .commento-email,
-    .commento-email *,
-    body {
-        background-color: $scheme-invert-ter !important;
-    }
-
-    .commento-login-box-container,
-    .commento-login-box {
-        background-color: $black !important;
-    }
-
-    .commento-root .commento-card .commento-option-button {
-        background: $white !important;
-    }
-
-    code,
-    .card,
-    .commento-textarea-container,
-    .commento-root textarea {
-        background-color: $dark !important;
-    }
-
-    .footer-links {
-        a:after {
-            color: $white;
-        }
-    }
-}
-
-// Homepage Hero
-
-.hero-homepage {
-    background-image: url("../../static/images/background.svg");
-    background-size: cover;
-    overflow: hidden;
-}
-
-.button-fullpage {
-    margin-top: 1em;
-}
-
-.hero-fullpage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-image: url("../../static/images/background.svg");
-    background-size: cover;
-    overflow: hidden;
-}
-
-.hero-glyph__wrapper {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 50vh;
-    overflow: hidden;
-}
-
-.hero-glyph {
-    position: absolute;
-    transform: translateX(50%);
-    top: 0;
-    right: 0;
-    width: 75vw;
-    height: 50vh;
-
-    // @media (max-width: 980px) {
-    // }
-    @media (max-width: 680px) {
-        width: 150vw;
-    }
-}
-
-.hero-banner {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-
-    img {
-        width: 100%;
-        position: relative;
-        z-index: 1;
-    }
-
-    @media (max-width: 680px) {
-        & {
-            width: 100%;
-        }
-    }
-}
+// Navigation styles for home page, templates
+// and for handling mobile nav visibility
 
 .navbar-menu.is-active {
     transition-duration: 200ms !important;
@@ -221,7 +98,71 @@ code {
     }
 }
 
-// Index Styling
+// Hero banner styles used for the index,
+// glyph, and fullheight pages (e.g. 404)
+
+.hero-homepage {
+    background-image: url("../../static/images/background.svg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.button-fullpage {
+    margin-top: 1em;
+}
+
+.hero-fullpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../../static/images/background.svg");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hero-glyph__wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.hero-glyph {
+    position: absolute;
+    transform: translateX(50%);
+    top: 0;
+    right: 0;
+    width: 75vw;
+    height: 50vh;
+
+    @media (max-width: 680px) {
+        width: 150vw;
+    }
+}
+
+.hero-banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+    img {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 680px) {
+        & {
+            width: 100%;
+        }
+    }
+}
+
+// Index styling used for formatting
+// the main feed based on media width
 
 .post-feed {
     transform: translateY(-6rem);
@@ -266,36 +207,13 @@ code {
     }
 }
 
-.post-recommendations {
-    .post-card-image {
-        border-top-left-radius: $radius-large;
-        border-top-right-radius: $radius-large;
-    }
-}
-
-.card {
-    border-radius: $radius-large;
-    transition-duration: 200ms;
-
-    .post-card-image {
-        margin: 0 0 10px 0;
-        width: auto;
-        height: 200px;
-        background: no-repeat center center;
-        background-size: cover;
-    }
-
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 0.5em 1em -0.125em rgba($scheme-invert, 0.1),
-            0 0px 0 1px rgba($scheme-invert, 0.02);
-    }
-}
+// Theme Stylings
+@import "dark-theme.scss";
 
 // Template Stylings
 @import "article.scss";
 
-// Import only what you need from Bulma
+// Bulma styles
 @import "../../node_modules/bulma/sass/base/_all.sass";
 @import "../../node_modules/bulma/sass/elements/button.sass";
 @import "../../node_modules/bulma/sass/elements/container.sass";
