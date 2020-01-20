@@ -3,16 +3,20 @@ import { Link } from 'gatsby'
 import { Layout } from '../components/common'
 
 const NotFoundPage = () => (
-    <Layout>
-        <div className="container">
-            <article className="content" style={{ textAlign: `center` }}>
-                <h1 className="content-title">Error 404</h1>
-                <section className="content-body">
-                    Page not found, <Link to="/">return home</Link> to start over
-                </section>
-            </article>
+    <div class="hero hero-fullpage is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    404
+                        </h1>
+                <h2 class="subtitle has-text-white">
+                    The page you're looking for could not be found.
+                    <br/>
+                    <a href="/" class="button is-dark button-fullpage has-text-white">Return Home</a>
+                </h2>
+            </div>
         </div>
-    </Layout>
+    </div>
 )
 
 export default NotFoundPage
