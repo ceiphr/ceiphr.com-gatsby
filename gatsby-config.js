@@ -154,9 +154,6 @@ module.exports = {
                     allGhostTag: {
                         sitemap: `tags`,
                     },
-                    allGhostAuthor: {
-                        sitemap: `authors`,
-                    },
                     allGhostPage: {
                         sitemap: `pages`,
                     },
