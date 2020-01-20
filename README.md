@@ -1,6 +1,6 @@
 # Ceiphr.com Gatsby
 
-[![Netlify](https://img.shields.io/netlify/1cbc5535-77bf-4896-b288-221005a33821)](https://app.netlify.com/sites/ceiphr/deploys)
+[![Netlify](https://img.shields.io/netlify/1cbc5535-77bf-4896-b288-221005a33821)](https://app.netlify.com/sites/ceiphr/deploys) [![Build Status](https://travis-ci.com/ceiphr/ceiphr.com-gatsby.svg?branch=master)](https://travis-ci.com/ceiphr/ceiphr.com-gatsby)
 
 A rewrite of [www.ceiphr.com](https://www.ceiphr.com/) using reactjs, gatsby, and bulma. Hosted on Netlify.
 

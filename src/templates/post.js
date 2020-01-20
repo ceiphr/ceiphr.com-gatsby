@@ -67,7 +67,7 @@ class Post extends React.Component {
                                                     </div>
                                                     <div className="is-pulled-right">
                                                         <p className="has-text-right">{readingTime}</p>
-                                                        {post.tags && <div className="tag"> <Tags post={post} visibility="public" autolink={true} /></div>}
+                                                        {post.tags && <div className="tag"> <Tags post={post} visibility="public" permalink="/tag/:slug/" autolink={true} /></div>}
                                                     </div>
                                                 </div>
                                             </div>

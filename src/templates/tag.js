@@ -25,9 +25,9 @@ const Tag = ({ data, location, pageContext }) => {
             <Layout>
                 <div className="container">
                     <section className="hero">
-                        <div className="hero-body">
+                        <div className="hero-body hero-no-side-padding">
                             <h1 className="title">
-                                {tag.name}
+                                #{tag.name}
                             </h1>
                             <h2 className="subtitle">
                                 {tag.description ? <p>{tag.description}</p> : null}

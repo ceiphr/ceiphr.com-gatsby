@@ -42,7 +42,7 @@ class DefaultLayout extends React.Component {
                 <div className="viewport">
                     <div className="viewport-top">
                         {/* The main header section on top of the screen */}
-                        <nav id="navbar" className={`navbar ` + ((this.props.isHome && this.state.navVisibility) ? `is-transparent` : `is-black`)}>
+                        <nav id="navbar" className={`navbar ` + ((this.props.isHome && this.state.navVisibility) ? `is-transp` : `is-black`)}>
                             <div className="container">
                                 <div className="navbar-brand">
                                     <a className="navbar-item" href="/">

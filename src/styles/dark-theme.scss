@@ -18,6 +18,10 @@
 
     a {
         color: $link !important;
+
+        &:hover {
+            color: $white !important;
+        }
     }
 
     .commento-email-button {
@@ -28,6 +32,10 @@
     .commento-email *,
     body {
         background-color: $scheme-invert-ter !important;
+    }
+
+    .commento-root .commento-card {
+        border-top: 1px solid $dark;
     }
 
     .commento-login-box-container,
