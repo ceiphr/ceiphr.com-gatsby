@@ -10,8 +10,8 @@ module.exports = {
     shareImageHeight: 523, // Change to the height of your default share image
 
     shortTitle: `Ceiphr`, // Used for App manifest e.g. Mobile Home Screen
-    siteIcon: `favicon.png`, // Logo in /static dir used for SEO, RSS, and App manifest
-    appIcon: `appicon.png`, // Logo in /static dir used for SEO, RSS, and App manifest
+    siteIcon: `favicon.png`, // Logo in /static dir used for SEO, and RSS
+    appIcon: `appicon.png`, // Logo in /static dir used for App manifest
     backgroundColor: `#000000`, // Used for Offline Manifest
     themeColor: `#000000`, // Used for Offline Manifest
 }

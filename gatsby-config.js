@@ -74,7 +74,7 @@ module.exports = {
                 background_color: config.backgroundColor,
                 theme_color: config.themeColor,
                 display: `minimal-ui`,
-                icon: `static/${config.appIcon}`,
+                icon: `static/${config.favIcon}`,
                 legacy: true,
                 query: `
                 {
