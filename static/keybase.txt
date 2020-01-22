@@ -1,0 +1,81 @@
+==================================================================
+https://keybase.io/ceiphr
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.ceiphr.com
+  * I am ceiphr (https://keybase.io/ceiphr) on keybase.
+  * I have a public key with fingerprint 0EBE C415 386C 019E E744  63F4 F057 8AAF 3218 EA3A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01016fdae09f5bdf537a35f7a9d1a920998a6fdb3b415008a5c4a4f09ad58f5258a40a",
+      "fingerprint": "0ebec415386c019ee74463f4f0578aaf3218ea3a",
+      "host": "keybase.io",
+      "key_id": "f0578aaf3218ea3a",
+      "kid": "01016fdae09f5bdf537a35f7a9d1a920998a6fdb3b415008a5c4a4f09ad58f5258a40a",
+      "uid": "57424693474525d096f18a06a175bb19",
+      "username": "ceiphr"
+    },
+    "merkle_root": {
+      "ctime": 1579658525,
+      "hash_meta": "bab2c89b86ec759b3ddef4f4c75e1a490d897e6e4b7eb631db67095b67f6dd8e",
+      "seqno": 14317214
+    },
+    "revoke": {
+      "sig_ids": [
+        "3cddebe26fe150939030929a230908799500d28c48f279a16d4cc1bad878b1d30f"
+      ]
+    },
+    "service": {
+      "hostname": "www.ceiphr.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1579658529,
+  "expire_in": 157680000,
+  "prev": "ebddf96ea7d59660771b9a9e71df0c78abcca8e08cd43e4885bf4bfa8fcf5af3",
+  "seqno": 85,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMK5AnicrVNdaB1FFL6xMSVXqkJfWvXBroViiOnM7uzOzMWXitAHFZUQldr2Oj9n
+kuUmd6+7m3sTkhB88CJWQcTSYqJGWog/hDSFNm1pJcaWgNofQShWWgXjg7GNVtuH
+orbOXiuC+Og+7DBzvvOd73xz5viqFbl8089PvzztrlkqNH02X+vPbd8wtW7IkZEe
+dApDTgkaC/RqSNJiKdROwUEY4cBoAYgbX2rje1R4vqGCayy4izhnwsalJwn2EWLC
+V0QQg7jQPjO+6zNBkHDaHROWuyGuxGE5zWhBgrIZHgsUwhyAEhJ4xib6lAlhPBcz
+EF6W2BMlWYYVJ0UCHWFkz+ym2JD3H/j/WXd/g86nxCUB9wglNqYRDwxmAgUCU19K
+zDNgAnFZ9IFFKwgrPbEz0u70QVzqhWIcRWlmrUrDDIB9ygOfWSbbnkh6in2QCpsn
+hXQV45IFoKjPpac1WE+I3QAWhCPNOIUAiKQgAw9rGVDEffs3gdYMrIoEni9HtgLx
+MHUxsRJiqEYlyKonYbd1LXEKzzqestQS3MCAbZ97HHmIu1y4dkGMcm490S5ThBmX
+coEDTZTCUmhGmcTaQ8bZNpJVi6uhapBn13Sz/Vqt1vGXBR0q6rOiKnGURirqtbGe
+NK0khcyadLDSAIMs3qQpyrCs7ZjYjCrESRiVbSMW+W/XeLsDA5UwhmJYbhwHDNkv
+qwNVSwlSa8MDEFT7PAgQpVhywYFibZCy8yKVEgwQU5p4QBjzpSHSCGaU8e0s/WMj
+sxeUim7Lab0ri7Q/Bmdkfm5rc64pn2u59Zbs/eTyrXf+/aru/nHljefGozMHv3xz
+375To7f1nt15zx/7Z5P1D696cuee+vlP2yY773tw9fSm8fbDV7w14dZDaycn17s/
+vRX+MvH+2CevnVu449H56xeamy8v4tIY+ebE2fHPZwfmfl9+4eO3P/ztxf3fdh3I
+HXl199jIwlQ1PNo6+t3ea6fbLo7uqpPOk0/c/kV9R9cW/N7sR/fu2TiMLr3ecnJg
+e+dLmw+f2Xy+9utwxa+1HrpYmViuPnIsP7X00LGZtR9s2/D1/OW5yvAbrzi5TXuv
+DC6vSL8iEz9cPVJ7xmt7d9di7bF1G+UDT+04daPede1+ULsP1PNmKf7+8fHyXefq
+M9PB6estWy4tssGZlRdW84Whoy3vXP0TL+iMnw==
+=EUkx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ceiphr
+
+==================================================================

@@ -1,12 +1,12 @@
-# Ceiphr.com Gatsby
+# Gatsby Theme - Ceiphr
 
 [![Netlify](https://img.shields.io/netlify/1cbc5535-77bf-4896-b288-221005a33821)](https://app.netlify.com/sites/ceiphr/deploys) [![Build Status](https://travis-ci.com/ceiphr/ceiphr.com-gatsby.svg?branch=master)](https://travis-ci.com/ceiphr/ceiphr.com-gatsby)
 
 A gatsby theme using a headless Ghost CMS hosted by DigitalOcean as the backend. This project is deployed on Netlify.
 
-<!-- &nbsp;
+&nbsp;
 
-![gatsby-starter-ghost](https://user-images.githubusercontent.com/120485/50913567-8ab8e380-142c-11e9-9e78-de02ded12fc6.jpg) -->
+![gatsby-theme-ceiphr](https://i.imgur.com/JYjfuUt.png)
 
 &nbsp;
 
@@ -20,7 +20,7 @@ gatsby new gatsby-theme-ceiphr https://github.com/ceiphr/gatsby-theme-ceiphr.git
 ```bash
 # From Source
 git clone https://github.com/ceiphr/gatsby-theme-ceiphr.git
-cd ceiphr.com-gatsby
+cd gatsby-theme-ceiphr
 ```
 
 Then install dependencies
