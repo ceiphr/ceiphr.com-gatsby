@@ -1,6 +1,7 @@
 # Gatsby Theme - Ceiphr
 
-[![Netlify](https://img.shields.io/netlify/1cbc5535-77bf-4896-b288-221005a33821)](https://app.netlify.com/sites/ceiphr/deploys) [![Build Status](https://travis-ci.com/ceiphr/gatsby-theme-ceiphr.svg?branch=master)](https://travis-ci.com/ceiphr/gatsby-theme-ceiphr)
+# ARCHIVED
+This project is archived. [gatsby-ceiphr](https://github.com/ceiphr/gatsby-ceiphr) will be officially replacing this project. Running a headless Ghost CMS makes this site unprofitable. Operating a serverless version of this website hosted on Vercel will reduce costs. Feel free to clone this repo and use the site for your own projects.
 
 A gatsby theme using a headless Ghost CMS hosted by DigitalOcean as the backend. This project is deployed on Netlify.
 
